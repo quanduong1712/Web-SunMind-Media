@@ -38,15 +38,11 @@ export default function Footer() {
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent" />
       <div className="container-main grid gap-12 xl:grid-cols-[1.2fr_2fr_1.2fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <CompanyLogo type="mark" className="h-12 w-12" />
-            <div>
-              <p className="text-2xl font-black tracking-wide text-orange-300">SUNMIND</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.36em] text-orange-100/90">Media</p>
-            </div>
+          <div className="inline-flex rounded-[1.6rem] border border-orange-300/15 bg-white px-5 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.14)]">
+            <CompanyLogo type="full" className="h-16 w-[240px]" />
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-orange-100/80">
-            Hồ sơ năng lực và đề xuất hợp tác phát triển hệ sinh thái Creator Commerce.
+            SunMind Media phát triển hệ sinh thái nội dung thương mại điện tử theo hướng rõ quy trình, giàu sáng tạo và bền vững hiệu quả.
           </p>
           <div className="mt-6 flex gap-3 text-orange-300">
             <a href="https://facebook.com" target="_blank" rel="noreferrer" className="rounded-full border border-orange-400/40 p-2 transition hover:border-orange-300 hover:text-orange-200"><Facebook size={16} /></a>

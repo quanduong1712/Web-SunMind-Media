@@ -33,12 +33,8 @@ export default function Navbar() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${scrolled ? "glass-nav" : "bg-transparent"}`}>
       <div className="container-main flex h-20 items-center justify-between">
-        <a className="inline-flex items-center gap-2.5" href="#home" aria-label="SunMind Media">
-          <CompanyLogo type="mark" className="h-9 w-9" />
-          <div className="leading-none">
-            <p className="text-base font-extrabold tracking-wide text-sunmind-dark">SUNMIND</p>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-sunmind-primary">Media</p>
-          </div>
+        <a className="inline-flex items-center" href="#home" aria-label="SunMind Media">
+          <CompanyLogo type="full" className="h-12 w-[220px] sm:h-14 sm:w-[250px]" />
         </a>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-sunmind-dark lg:flex">
           {navItems.map((item) => (
