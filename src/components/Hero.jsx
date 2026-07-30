@@ -70,12 +70,8 @@ export default function Hero({ stats }) {
               transition={{ duration: 0.8 }}
               className="absolute inset-0 m-auto flex h-[250px] w-[250px] items-center justify-center rounded-full bg-white shadow-[0_24px_70px_rgba(255,107,0,0.2)]"
             >
-              <div className="text-center">
-                <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-full border border-orange-100 bg-gradient-to-br from-orange-500/20 via-orange-400/15 to-orange-300/20 shadow-[inset_0_8px_30px_rgba(255,255,255,0.35)]">
-                  <CompanyLogo type="mark" className="h-24 w-24" />
-                </div>
-                <div className="mx-auto mt-2 h-3 w-20 rounded-full bg-orange-200/50 blur-md" />
-                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-sunmind-gray">SunMind Media</p>
+              <div className="flex h-[178px] w-[178px] items-center justify-center rounded-full border border-orange-100 bg-gradient-to-br from-orange-500/10 via-orange-300/10 to-orange-200/10 shadow-[inset_0_12px_34px_rgba(255,255,255,0.45)]">
+                <CompanyLogo type="full" className="h-28 w-32" />
               </div>
             </motion.div>
 
