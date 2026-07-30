@@ -56,9 +56,9 @@ export default function WhyChoose({ items }) {
               <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-300" />
               <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-300" />
             </motion.div>
-            <div className="flex h-[258px] w-[258px] items-center justify-center rounded-full border border-orange-100 bg-white shadow-[0_24px_80px_rgba(255,107,0,0.22)]">
-              <div className="flex h-[238px] w-[238px] items-center justify-center rounded-full bg-gradient-to-br from-orange-50 to-white shadow-[inset_0_8px_20px_rgba(255,170,72,0.14)]">
-                <CompanyLogo type="full" className="h-56 w-72 scale-[1.34]" />
+            <div className="flex h-[266px] w-[266px] items-center justify-center overflow-hidden rounded-full border border-orange-100 bg-white shadow-[0_24px_80px_rgba(255,107,0,0.22)]">
+              <div className="flex h-[246px] w-[246px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-orange-50 to-white shadow-[inset_0_8px_20px_rgba(255,170,72,0.14)]">
+                <CompanyLogo type="full" className="h-[214px] w-[262px]" />
               </div>
             </div>
           </motion.div>

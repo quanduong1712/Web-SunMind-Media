@@ -68,10 +68,10 @@ export default function Hero({ stats }) {
               initial={{ scale: 0.94, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="absolute inset-0 m-auto flex h-[292px] w-[292px] items-center justify-center rounded-full bg-white shadow-[0_24px_70px_rgba(255,107,0,0.2)]"
+              className="absolute inset-0 m-auto flex h-[300px] w-[300px] items-center justify-center overflow-hidden rounded-full bg-white shadow-[0_24px_70px_rgba(255,107,0,0.2)]"
             >
-              <div className="flex h-[268px] w-[268px] items-center justify-center rounded-full border border-orange-100 bg-gradient-to-br from-orange-500/10 via-orange-300/10 to-orange-200/10 shadow-[inset_0_12px_34px_rgba(255,255,255,0.45)]">
-                <CompanyLogo type="full" className="h-60 w-72 scale-[1.46]" />
+              <div className="flex h-[278px] w-[278px] items-center justify-center overflow-hidden rounded-full border border-orange-100 bg-gradient-to-br from-orange-500/10 via-orange-300/10 to-orange-200/10 shadow-[inset_0_12px_34px_rgba(255,255,255,0.45)]">
+                <CompanyLogo type="full" className="h-[224px] w-[272px]" />
               </div>
             </motion.div>
 
