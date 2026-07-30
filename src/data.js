@@ -117,14 +117,14 @@ export const ecosystemNodes = [
 ];
 
 export const creators = [
-  { name: "Mai Anh Mẹ Cún", followers: "Beauty lifestyle", category: "Sắc đẹp|Thời trang nữ|Mẹ và bé", platform: "Shopee Video", tone: "from-[#f6d2b8] to-[#f3a35c]" },
-  { name: "Nguyễn Hà Thu", followers: "Fashion beauty", category: "Sắc đẹp|Thời trang nữ|Phụ kiện thời trang", platform: "TikTok Shop", tone: "from-[#d8d1f5] to-[#f2a7b8]" },
-  { name: "Mèo Trái Đất", followers: "Beauty wellness", category: "Sắc đẹp|Sức khỏe|Lifestyle", platform: "Shopee Live", tone: "from-[#c8d8bf] to-[#f0a04b]" },
-  { name: "Phương Ngân", followers: "Food fashion", category: "Thực phẩm đồ uống|Thời trang nữ|Thể thao dã ngoại", platform: "TikTok Shop", tone: "from-[#f5d6c6] to-[#ee8a5a]" },
-  { name: "Phương Phương", followers: "Home living", category: "Nhà cửa đời sống|Thiết bị gia dụng|Thực phẩm đồ uống", platform: "Shopee Video", tone: "from-[#d1e1d5] to-[#f0a54a]" },
-  { name: "Mai Tiến Đạt", followers: "Men style", category: "Thời trang nam|Sắc đẹp|Thực phẩm đồ uống", platform: "Shopee Live", tone: "from-[#d0d7e6] to-[#f49d37]" },
-  { name: "Mai Vân Trang", followers: "Beauty fashion", category: "Sắc đẹp|Thời trang nữ|Phụ kiện thời trang", platform: "TikTok Shop", tone: "from-[#ead6c8] to-[#f29f67]" },
-  { name: "Hằng Mommy", followers: "Mom & family", category: "Nhà cửa đời sống|Mẹ và bé|Thực phẩm đồ uống", platform: "Shopee Video", tone: "from-[#f2d5cc] to-[#efae79]" },
+  { name: "Mai Anh Mẹ Cún", followers: "Beauty lifestyle", category: "Sắc đẹp|Thời trang nữ|Mẹ và bé", platform: "Shopee Video", tone: "from-[#f6d2b8] to-[#f3a35c]", image: "" },
+  { name: "Nguyễn Hà Thu", followers: "Fashion beauty", category: "Sắc đẹp|Thời trang nữ|Phụ kiện thời trang", platform: "TikTok Shop", tone: "from-[#d8d1f5] to-[#f2a7b8]", image: "" },
+  { name: "Mèo Trái Đất", followers: "Beauty wellness", category: "Sắc đẹp|Sức khỏe|Lifestyle", platform: "Shopee Live", tone: "from-[#c8d8bf] to-[#f0a04b]", image: "" },
+  { name: "Phương Ngân", followers: "Food fashion", category: "Thực phẩm đồ uống|Thời trang nữ|Thể thao dã ngoại", platform: "TikTok Shop", tone: "from-[#f5d6c6] to-[#ee8a5a]", image: "" },
+  { name: "Phương Phương", followers: "Home living", category: "Nhà cửa đời sống|Thiết bị gia dụng|Thực phẩm đồ uống", platform: "Shopee Video", tone: "from-[#d1e1d5] to-[#f0a54a]", image: "" },
+  { name: "Mai Tiến Đạt", followers: "Men style", category: "Thời trang nam|Sắc đẹp|Thực phẩm đồ uống", platform: "Shopee Live", tone: "from-[#d0d7e6] to-[#f49d37]", image: "" },
+  { name: "Mai Vân Trang", followers: "Beauty fashion", category: "Sắc đẹp|Thời trang nữ|Phụ kiện thời trang", platform: "TikTok Shop", tone: "from-[#ead6c8] to-[#f29f67]", image: "" },
+  { name: "Hằng Mommy", followers: "Mom & family", category: "Nhà cửa đời sống|Mẹ và bé|Thực phẩm đồ uống", platform: "Shopee Video", tone: "from-[#f2d5cc] to-[#efae79]", image: "" },
 ];
 
 export const partnerNames = [
@@ -192,6 +192,7 @@ export const caseStudies = [
   {
     title: "Tăng trưởng hiệu suất livestream theo dữ liệu",
     industry: "Shopee Live",
+    summary: "Tăng doanh thu mạnh dù số phiên livestream không tăng, nhờ cải thiện chất lượng reach và hiệu suất từng phiên.",
     challenge: "Doanh thu cần tăng nhưng số phiên livestream không mở rộng thêm.",
     solution: "Tối ưu chất lượng phiên live theo dữ liệu reach, đơn hàng, hiệu suất theo phiên và theo giờ.",
     impact: ["Revenue +54,7%", "Orders +62,7%", "Views +471,3%", "Revenue/Session +66,3%"],
@@ -199,6 +200,7 @@ export const caseStudies = [
   {
     title: "Tăng trưởng liên tục cho thương hiệu mỹ phẩm",
     industry: "Beauty Commerce",
+    summary: "Mở rộng traffic, tăng số người mua và vẫn giữ tỷ lệ chuyển đổi ổn định trong suốt giai đoạn tăng trưởng.",
     challenge: "Cần mở rộng traffic, buyers và duy trì tỷ lệ chuyển đổi ổn định trong quá trình scale.",
     solution: "Phối hợp vận hành livestream, sản xuất nội dung, tối ưu ưu đãi, lịch live và phân tích dữ liệu định kỳ.",
     impact: ["Traffic +63,3%", "Confirmed Buyers +76,1%", "CVR Jun 5,49%", "Revenue scale 1,84x"],
@@ -206,6 +208,7 @@ export const caseStudies = [
   {
     title: "Dữ liệu chứng minh hiệu quả thương mại",
     industry: "Affiliate + Livestream",
+    summary: "Biến nội dung creator thành một kênh thương mại có thể theo dõi, phân tích và cải thiện liên tục bằng dữ liệu thực tế.",
     challenge: "Cần bằng chứng dữ liệu cho khả năng chuyển đổi thương mại từ nội dung creator.",
     solution: "Theo dõi dashboard chỉ số views, clicks, buyers, orders, doanh thu và tối ưu liên tục theo chu kỳ.",
     impact: ["Đo lường xuyên suốt", "Báo cáo minh bạch", "Tối ưu theo dữ liệu", "Tăng trưởng bền vững"],
@@ -215,18 +218,21 @@ export const caseStudies = [
 export const leadership = [
   {
     name: "Nguyễn Phương Nam",
-    role: "Đại diện SUNMIND MEDIA",
-    bio: "Định hướng phát triển hệ sinh thái creator commerce dựa trên chất lượng vận hành, dữ liệu và hiệu quả thực tế.",
+    role: "Đại diện SunMind Media",
+    bio: "Định hướng SunMind theo mô hình tăng trưởng bền vững, lấy chất lượng creator, nội dung và hiệu quả thương mại làm trọng tâm.",
+    strengths: ["Định hướng hệ sinh thái", "Tập trung hiệu quả thực chất"],
   },
   {
-    name: "Livestream Operations Team",
-    role: "Host · Live Operator · Technical Support",
-    bio: "Phụ trách điều phối phiên live, sản phẩm, bình luận, thiết bị và chất lượng triển khai trong từng phiên.",
+    name: "Đội ngũ vận hành livestream",
+    role: "Host, điều phối live và hỗ trợ kỹ thuật",
+    bio: "Phối hợp chuẩn bị sản phẩm, flow chương trình, tương tác phiên live và chất lượng kỹ thuật để mỗi buổi phát sóng vận hành mượt mà hơn.",
+    strengths: ["Vận hành theo quy trình", "Phản ứng nhanh trong phiên live"],
   },
   {
-    name: "Performance & Enablement Team",
-    role: "Performance Analyst · Creator Enablement",
-    bio: "Tổng hợp dữ liệu, phản hồi tối ưu và triển khai chương trình đào tạo creator theo từng giai đoạn phát triển.",
+    name: "Đội ngũ tối ưu và phát triển creator",
+    role: "Phân tích hiệu suất và đồng hành đào tạo",
+    bio: "Theo dõi số liệu, phản hồi cải thiện nội dung và hỗ trợ creator phát triển kỹ năng để tăng hiệu quả bền vững theo thời gian.",
+    strengths: ["Đọc dữ liệu để tối ưu", "Đồng hành phát triển dài hạn"],
   },
 ];
 

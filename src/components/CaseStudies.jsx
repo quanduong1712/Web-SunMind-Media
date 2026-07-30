@@ -6,10 +6,10 @@ export default function CaseStudies({ items }) {
     <section className="section-wrap bg-white">
       <div className="container-main">
         <SectionTitle
-          eyebrow="CASE STUDY"
-          title="Dự án thực chiến"
-          highlight="với kết quả định lượng"
-          desc="Một số dự án tiêu biểu SunMind đã triển khai cho thương hiệu Việt theo hướng dữ liệu, hiệu suất và tăng trưởng bền vững."
+          eyebrow="DỰ ÁN TIÊU BIỂU"
+          title="Kết quả thực tế"
+          highlight="từ cách làm có hệ thống"
+          desc="Mỗi dự án của SunMind bắt đầu từ một bài toán rõ ràng, được triển khai bằng quy trình cụ thể và đo bằng kết quả có thể kiểm chứng."
         />
 
         <div className="mt-12 grid gap-5 xl:grid-cols-3">
@@ -22,10 +22,16 @@ export default function CaseStudies({ items }) {
               transition={{ delay: idx * 0.06 }}
               className="section-enterprise"
             >
-              <div className="flex items-center justify-between gap-3">
-                <h3 className="text-xl font-bold leading-snug">{item.title}</h3>
-                <span className="kpi-chip">{item.industry}</span>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <span className="kpi-chip">{item.industry}</span>
+                  <h3 className="mt-4 text-xl font-bold leading-snug">{item.title}</h3>
+                </div>
               </div>
+
+              <p className="mt-4 border-l-4 border-orange-200 pl-4 text-sm leading-relaxed text-sunmind-gray">
+                {item.summary}
+              </p>
 
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-sunmind-primary">Bài toán</p>
               <p className="mt-1 text-sunmind-gray">{item.challenge}</p>
@@ -33,6 +39,7 @@ export default function CaseStudies({ items }) {
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-sunmind-primary">Giải pháp</p>
               <p className="mt-1 text-sunmind-gray">{item.solution}</p>
 
+              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-sunmind-primary">Kết quả nổi bật</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {item.impact.map((impact) => (
                   <span key={impact} className="kpi-chip">

@@ -32,9 +32,17 @@ export default function Creators({ creators }) {
               <div className={`relative h-56 bg-gradient-to-br ${creator.tone ?? "from-orange-200 to-orange-400"}`}>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.7),transparent_30%),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.28),transparent_26%)]" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 to-transparent" />
-                <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white/80 bg-white/25 text-3xl font-black text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)] backdrop-blur-sm transition duration-300 group-hover:scale-105">
-                  {getInitials(creator.name)}
-                </div>
+                {creator.image ? (
+                  <img
+                    src={creator.image}
+                    alt={creator.name}
+                    className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white/80 object-cover shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white/80 bg-white/25 text-3xl font-black text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)] backdrop-blur-sm transition duration-300 group-hover:scale-105">
+                    {getInitials(creator.name)}
+                  </div>
+                )}
                 <div className="absolute right-4 top-4 rounded-full border border-white/55 bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                   {creator.platform}
                 </div>

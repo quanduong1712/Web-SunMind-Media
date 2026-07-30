@@ -6,10 +6,10 @@ export default function Leadership({ leaders }) {
     <section className="section-wrap bg-sunmind-light">
       <div className="container-main">
         <SectionTitle
-          eyebrow="LEADERSHIP"
-          title="Đội ngũ"
-          highlight="lãnh đạo chiến lược"
-          desc="Nhóm lãnh đạo kết hợp năng lực tăng trưởng thương mại số, vận hành Creator Network và quản trị hiệu suất doanh nghiệp."
+          eyebrow="ĐỘI NGŨ ĐỒNG HÀNH"
+          title="Con người đứng sau"
+          highlight="mỗi kết quả"
+          desc="SunMind xây dựng niềm tin bằng đội ngũ hiểu nội dung, hiểu vận hành và biết cách biến dữ liệu thành hành động cụ thể."
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -36,6 +36,13 @@ export default function Leadership({ leaders }) {
                 </div>
               </div>
               <p className="mt-4 text-sunmind-gray">{leader.bio}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {leader.strengths.map((strength) => (
+                  <span key={strength} className="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-sunmind-primary">
+                    {strength}
+                  </span>
+                ))}
+              </div>
             </motion.article>
           ))}
         </div>
