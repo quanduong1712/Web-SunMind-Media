@@ -6,15 +6,15 @@ export default function Process({ steps }) {
     <section className="section-wrap">
       <div className="container-main">
         <SectionTitle
-          eyebrow="QUY TRÌNH HỢP TÁC"
-          title="Lộ trình"
-          highlight="triển khai"
-          desc="Từ đăng ký đến tối ưu hiệu suất, mỗi giai đoạn đều được vận hành theo quy trình rõ ràng, minh bạch và đo lường liên tục."
+          eyebrow="CREATOR OPERATING FLOW"
+          title="Luồng hoạt động"
+          highlight="theo hệ thống"
+          desc="Mô hình 4 bước giúp SunMind kết nối creator, sản phẩm và dữ liệu hiệu suất thành một vòng lặp tăng trưởng liên tục."
         />
 
         <div className="relative mt-12">
           <div className="absolute left-5 right-5 top-6 hidden h-[2px] bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 md:block" />
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-7">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
             {steps.map((step, idx) => (
               <motion.div
                 key={step}

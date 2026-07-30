@@ -4,11 +4,11 @@ import MagneticButton from "./MagneticButton";
 import CompanyLogo from "./CompanyLogo";
 
 const orbitTags = [
-  { icon: Users, label: "MCN", x: "6%", y: "18%", delay: 0.1 },
+  { icon: Users, label: "Recruitment", x: "6%", y: "18%", delay: 0.1 },
   { icon: Video, label: "Livestream", x: "80%", y: "12%", delay: 0.25 },
-  { icon: Link2, label: "Affiliate", x: "8%", y: "60%", delay: 0.15 },
-  { icon: Camera, label: "Content", x: "80%", y: "54%", delay: 0.3 },
-  { icon: BarChart3, label: "Performance", x: "42%", y: "74%", delay: 0.2 },
+  { icon: Link2, label: "Activation", x: "8%", y: "60%", delay: 0.15 },
+  { icon: Camera, label: "Production", x: "80%", y: "54%", delay: 0.3 },
+  { icon: BarChart3, label: "Optimization", x: "42%", y: "74%", delay: 0.2 },
 ];
 
 export default function Hero({ stats }) {
@@ -27,27 +27,27 @@ export default function Hero({ stats }) {
             SUNMIND MEDIA
           </span>
           <h1 className="mt-6 max-w-[760px] text-[40px] font-extrabold leading-[1.14] tracking-[-0.01em] sm:text-[50px] lg:text-[56px] xl:text-[60px]">
-            <span className="block py-0.5 xl:whitespace-nowrap">KẾT NỐI GIÁ TRỊ</span>
-            <span className="block py-0.5 text-sunmind-primary xl:whitespace-nowrap">LAN TOẢ THƯƠNG HIỆU</span>
-            <span className="block py-0.5 xl:whitespace-nowrap">KIẾN TẠO TƯƠNG LAI</span>
+            <span className="block py-0.5 xl:whitespace-nowrap">COMPANY PROFILE</span>
+            <span className="block py-0.5 text-sunmind-primary xl:whitespace-nowrap">PARTNERSHIP PROPOSAL</span>
+            <span className="block py-0.5 xl:whitespace-nowrap">CREATOR COMMERCE</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sunmind-gray">
-            SunMind Media là đối tác MCN và Social Commerce cao cấp tại Việt Nam, kết nối Creator,
-            Merchant và thương hiệu bằng hệ thống vận hành dữ liệu, nội dung và hiệu suất.
+            Hồ sơ năng lực và đề xuất hợp tác phát triển hệ sinh thái Creator Commerce với trọng tâm:
+            Content Production, Creator Management, Affiliate Marketing và Livestream Commerce.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <MagneticButton href="#services" className="inline-flex items-center gap-2">
-              Khám phá dịch vụ <ArrowRight size={16} />
+              Xem năng lực triển khai <ArrowRight size={16} />
             </MagneticButton>
             <MagneticButton href="#about" light className="border border-orange-300 bg-white text-sunmind-dark hover:bg-orange-50">
-              Về chúng tôi
+              Thư ngỏ & tổng quan
             </MagneticButton>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-2 text-sm font-semibold text-sunmind-dark/75">
-            <span className="rounded-full border border-orange-200 bg-white/75 px-4 py-2">Data-driven Growth</span>
-            <span className="rounded-full border border-orange-200 bg-white/75 px-4 py-2">Livestream Commerce</span>
-            <span className="rounded-full border border-orange-200 bg-white/75 px-4 py-2">Affiliate Marketing</span>
+            <span className="rounded-full border border-orange-200 bg-white/75 px-4 py-2">Shopee Partnership 2026</span>
+            <span className="rounded-full border border-orange-200 bg-white/75 px-4 py-2">Growth-focused</span>
+            <span className="rounded-full border border-orange-200 bg-white/75 px-4 py-2">Process-driven</span>
           </div>
         </motion.div>
 

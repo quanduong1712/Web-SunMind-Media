@@ -10,10 +10,10 @@ export default function WhyChoose({ items }) {
     <section className="section-wrap light-band relative overflow-hidden">
       <div className="container-main relative">
         <SectionTitle
-          eyebrow="VÌ SAO CHỌN SUNMIND"
-          title="Đối tác tin cậy"
-          highlight="của Creator và Merchant"
-          desc="Chúng tôi không chỉ là MCN, mà là đối tác chiến lược đồng hành trên hành trình phát triển bền vững trong hệ sinh thái Social Commerce."
+          eyebrow="GIÁ TRỊ CỐT LÕI"
+          title="Nguyên tắc vận hành"
+          highlight="của SunMind"
+          desc="SunMind tập trung vào hiệu quả, quy trình và khả năng đồng hành dài hạn thay vì tăng trưởng quy mô phô trương."
         />
 
         <div className="mx-auto mt-12 grid max-w-6xl gap-6 xl:grid-cols-[1fr_360px_1fr] xl:items-center">

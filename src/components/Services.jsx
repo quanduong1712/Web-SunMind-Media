@@ -6,10 +6,10 @@ export default function Services({ items }) {
     <section className="section-wrap wave-bg">
       <div className="container-main">
         <SectionTitle
-          eyebrow="DỊCH VỤ CỦA CHÚNG TÔI"
-          title="Giải pháp tăng trưởng"
-          highlight="chuẩn B2B"
-          desc="SunMind Media triển khai hệ sinh thái Social Commerce theo mô hình full-funnel, đo lường bằng KPI và tối ưu bằng dữ liệu theo từng giai đoạn tăng trưởng."
+          eyebrow="NĂNG LỰC CỐT LÕI"
+          title="Creator Commerce"
+          highlight="Operating Capabilities"
+          desc="Từ tuyển chọn creator đến tối ưu hiệu suất thương mại, toàn bộ quy trình được triển khai theo mô hình có thể đo lường và cải tiến liên tục."
         />
 
         <div className="enterprise-divider mt-10" />

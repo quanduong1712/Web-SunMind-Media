@@ -8,27 +8,27 @@ export default function Footer() {
       items: [
         { label: "Giới thiệu", href: "#about" },
         { label: "Sứ mệnh & tầm nhìn", href: "#about" },
-        { label: "Đội ngũ", href: "#services" },
-        { label: "Tuyển dụng", href: "#contact" },
+        { label: "Đội ngũ", href: "#about" },
+        { label: "Hợp tác Shopee", href: "#partners" },
       ],
     },
     {
       title: "Dịch vụ",
       items: [
-        { label: "MCN", href: "#services" },
-        { label: "Affiliate", href: "#services" },
-        { label: "Livestream", href: "#services" },
-        { label: "Sản xuất nội dung", href: "#services" },
-        { label: "Tiếp thị hiệu suất", href: "#services" },
+        { label: "Creator Recruitment", href: "#services" },
+        { label: "Content Enablement", href: "#services" },
+        { label: "Commerce Activation", href: "#services" },
+        { label: "Livestream Commerce", href: "#services" },
+        { label: "Performance Optimization", href: "#services" },
       ],
     },
     {
       title: "Hỗ trợ",
       items: [
-        { label: "Tin tức", href: "#testimonials" },
+        { label: "Case Study", href: "#testimonials" },
         { label: "FAQ", href: "#faq" },
-        { label: "Chính sách bảo mật", href: "#contact" },
-        { label: "Điều khoản sử dụng", href: "#contact" },
+        { label: "Cam kết hợp tác", href: "#partners" },
+        { label: "Liên hệ", href: "#contact" },
       ],
     },
   ];
@@ -46,7 +46,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-orange-100/80">
-            Kết nối giá trị - Lan tỏa thương hiệu - Kiến tạo tương lai.
+            Hồ sơ năng lực và đề xuất hợp tác phát triển hệ sinh thái Creator Commerce.
           </p>
           <div className="mt-6 flex gap-3 text-orange-300">
             <a href="https://facebook.com" target="_blank" rel="noreferrer" className="rounded-full border border-orange-400/40 p-2 transition hover:border-orange-300 hover:text-orange-200"><Facebook size={16} /></a>
@@ -75,9 +75,9 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-orange-200">Liên hệ</h4>
           <ul className="mt-4 space-y-3 text-sm text-orange-100/90">
-            <li className="flex items-center gap-2"><Phone size={15} /> <a href="tel:0888999123">0888 999 123</a></li>
-            <li className="flex items-center gap-2"><Mail size={15} /> <a href="mailto:contact@sunmindmedia.vn">contact@sunmindmedia.vn</a></li>
-            <li className="flex items-center gap-2"><MapPin size={15} /> Tòa nhà SunMind, Bắc Ninh, Việt Nam</li>
+            <li className="flex items-center gap-2"><Phone size={15} /> <a href="tel:0966878344">0966 878 344</a></li>
+            <li className="flex items-center gap-2"><Mail size={15} /> <a href="mailto:contact@sunmindmedia.com">contact@sunmindmedia.com</a></li>
+            <li className="flex items-center gap-2"><MapPin size={15} /> Ngọc Kim, Tân Yên, Bắc Ninh</li>
           </ul>
         </div>
       </div>

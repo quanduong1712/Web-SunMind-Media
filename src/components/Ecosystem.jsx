@@ -6,10 +6,10 @@ export default function Ecosystem({ nodes }) {
     <section className="section-wrap bg-sunmind-light relative overflow-hidden">
       <div className="container-main">
         <SectionTitle
-          eyebrow="ECOSYSTEM"
-          title="Hệ sinh thái kết nối"
-          highlight="Creator - Merchant - Platform"
-          desc="SunMind đóng vai trò trung tâm điều phối, kết nối dữ liệu, nội dung, bán hàng và vận hành hiệu suất giữa các thành tố trong hệ sinh thái."
+          eyebrow="SUNMIND CREATOR COMMERCE ECOSYSTEM"
+          title="Hệ sinh thái Creator"
+          highlight="kết nối đa thành phần"
+          desc="Kết nối nền tảng, nhà sáng tạo, thương hiệu và người tiêu dùng thông qua nội dung thương mại và luồng dữ liệu hiệu suất."
         />
 
         <div className="relative mx-auto mt-16 max-w-5xl rounded-[2rem] border border-orange-100 bg-white/90 px-5 py-12 shadow-soft md:px-10">

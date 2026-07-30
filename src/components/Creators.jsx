@@ -6,10 +6,10 @@ export default function Creators({ creators }) {
     <section className="section-wrap">
       <div className="container-main">
         <SectionTitle
-          eyebrow="CREATOR NỔI BẬT"
-          title="Người sáng tạo"
-          highlight="nổi bật"
-          desc="Mạng lưới Creator đa lĩnh vực giúp thương hiệu tiếp cận đúng khách hàng bằng nội dung có chiều sâu và khả năng chuyển đổi tốt."
+          eyebrow="CREATOR NETWORK"
+          title="Mạng lưới creator"
+          highlight="có chọn lọc"
+          desc="Creator được tuyển chọn theo năng lực nội dung, tệp người xem và khả năng phát triển thương mại bền vững."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {creators.map((creator, idx) => (
