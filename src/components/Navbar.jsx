@@ -10,10 +10,10 @@ export default function Navbar() {
 
   const navMap = {
     "Giới thiệu": "#about",
-    "Dịch vụ": "#services",
+    "Năng lực": "#services",
     "Hệ sinh thái": "#ecosystem",
+    "Dự án": "#testimonials",
     "Đối tác": "#partners",
-    "Tin tức": "#testimonials",
     "Liên hệ": "#contact",
   };
 
@@ -47,7 +47,7 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-        <MagneticButton href="#contact" className="hidden lg:inline-flex">Hợp tác ngay</MagneticButton>
+        <MagneticButton href="#contact" className="hidden lg:inline-flex">Liên hệ tư vấn</MagneticButton>
         <button
           className="inline-flex rounded-xl border border-orange-200 bg-white/80 p-2 text-sunmind-primary lg:hidden"
           onClick={() => setOpen((prev) => !prev)}
@@ -70,7 +70,7 @@ export default function Navbar() {
                 {item}
               </a>
             ))}
-            <MagneticButton href="#contact" className="mt-2 w-full">Hợp tác ngay</MagneticButton>
+            <MagneticButton href="#contact" className="mt-2 w-full">Liên hệ tư vấn</MagneticButton>
           </div>
         </div>
       ) : null}

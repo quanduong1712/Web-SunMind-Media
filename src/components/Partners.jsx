@@ -10,21 +10,21 @@ export default function Partners({ names }) {
           eyebrow="ĐỐI TÁC CỦA CHÚNG TÔI"
           title="Mạng lưới"
           highlight="đối tác chiến lược"
-          desc="SunMind hợp tác cùng các nền tảng và đối tác vận hành hàng đầu để mở rộng quy mô tăng trưởng bền vững cho thương hiệu và Creator."
+          desc="SunMind kết nối với nền tảng, thương hiệu và hệ sinh thái vận hành để mở rộng năng lực triển khai cho creator và đối tác thương mại."
         />
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <div className="section-enterprise text-center">
-            <p className="text-3xl font-black text-sunmind-primary">50M+</p>
-            <p className="mt-1 text-sm font-medium text-sunmind-gray">Doanh số vận hành qua hệ sinh thái</p>
+            <p className="text-3xl font-black text-sunmind-primary">50+</p>
+            <p className="mt-1 text-sm font-medium text-sunmind-gray">Creator đang tham gia mạng lưới</p>
           </div>
           <div className="section-enterprise text-center">
-            <p className="text-3xl font-black text-sunmind-primary">500+</p>
-            <p className="mt-1 text-sm font-medium text-sunmind-gray">Merchant đang đồng hành</p>
+            <p className="text-3xl font-black text-sunmind-primary">15</p>
+            <p className="mt-1 text-sm font-medium text-sunmind-gray">Nhân sự nòng cốt vận hành</p>
           </div>
           <div className="section-enterprise text-center">
-            <p className="text-3xl font-black text-sunmind-primary">1000+</p>
-            <p className="mt-1 text-sm font-medium text-sunmind-gray">Creator trong mạng lưới</p>
+            <p className="text-3xl font-black text-sunmind-primary">2025</p>
+            <p className="mt-1 text-sm font-medium text-sunmind-gray">Năm khởi tạo hệ sinh thái</p>
           </div>
         </div>
 

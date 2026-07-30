@@ -45,23 +45,23 @@ function LazySectionFallback() {
 
 const coreValues = [
   {
-    title: "Performance Mindset",
+    title: "Tư duy hiệu quả",
     desc: "Mọi hoạt động được định hướng bằng mục tiêu cụ thể và có khả năng đo lường thông qua dữ liệu, nội dung và kết quả thương mại.",
   },
   {
-    title: "Creator First",
+    title: "Lấy creator làm trọng tâm",
     desc: "Tôn trọng cá tính nhà sáng tạo và xây dựng lộ trình phát triển phù hợp với năng lực, phong cách và tệp người xem.",
   },
   {
-    title: "Selective Growth",
+    title: "Tăng trưởng có chọn lọc",
     desc: "Ưu tiên creator có tiềm năng phát triển dài hạn, không mở rộng mạng lưới bằng số lượng đơn thuần.",
   },
   {
-    title: "Operational Discipline",
+    title: "Kỷ luật vận hành",
     desc: "Làm việc theo quy trình rõ ràng, có phân công, theo dõi và đánh giá kết quả để đảm bảo chất lượng triển khai ổn định.",
   },
   {
-    title: "Long-term Partnership",
+    title: "Hợp tác dài hạn",
     desc: "Hướng đến quan hệ hợp tác bền vững với nền tảng, creator, thương hiệu và đối tác thương mại điện tử.",
   },
 ];
@@ -153,16 +153,16 @@ export default function App() {
           <div className="absolute left-1/2 top-0 h-36 w-[68%] -translate-x-1/2 rounded-full bg-orange-300/20 blur-3xl" />
           <div className="container-main rounded-[2rem] border border-orange-400/20 bg-white/5 px-6 py-16 text-center backdrop-blur md:px-12">
             <h2 className="text-4xl font-black text-white md:text-6xl">
-              Sẵn sàng hợp tác phát triển <span className="text-orange-300">Creator Commerce</span> cùng SunMind?
+              Cùng SunMind xây dựng <span className="text-orange-300">tăng trưởng thương mại nội dung</span> bền vững
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg text-orange-100/90">
-              Chúng tôi đề xuất mô hình hợp tác chất lượng cao cùng Shopee và thương hiệu để tăng sản lượng
-              nội dung thương mại, chuẩn hóa vận hành và tạo tăng trưởng bền vững.
+              Từ nội dung, creator, livestream đến vận hành thương mại, SunMind đồng hành cùng thương hiệu
+              để biến tiềm năng thành kết quả có thể đo lường.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <MagneticButton href="#contact">Đặt lịch tư vấn</MagneticButton>
               <MagneticButton href="#partners" light className="text-white">
-                Xem đề xuất hợp tác
+                Xem hệ sinh thái đối tác
               </MagneticButton>
             </div>
           </div>
