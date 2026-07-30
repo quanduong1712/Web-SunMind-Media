@@ -100,6 +100,37 @@ npm run build
 
 3. Deploy dist lên Vercel/Netlify/Cloudflare Pages
 
+## CI tự động với GitHub Actions
+
+Repository đã có workflow tại `.github/workflows/build.yml`.
+
+- Tự chạy khi `push` lên `main`
+- Tự chạy khi mở/cập nhật `pull request` vào `main`
+- Các bước: `npm ci` -> `npm run build`
+
+Bạn có thể xem kết quả tại tab **Actions** của repo GitHub.
+
+## Auto deploy với Vercel (mỗi lần cập nhật code)
+
+1. Vào Vercel: https://vercel.com/new
+2. Chọn **Import Git Repository**
+3. Chọn repo: `quanduong1712/Web-SunMind-Media`
+4. Framework Preset: `Vite`
+5. Build Command: `npm run build`
+6. Output Directory: `dist`
+7. Nhấn **Deploy**
+
+Sau khi kết nối xong:
+
+- Mỗi lần push lên `main`: Vercel tự tạo Production Deployment
+- Mỗi pull request/branch: Vercel tự tạo Preview Deployment
+
+Nếu muốn dùng domain riêng:
+
+1. Vào project trên Vercel -> **Settings** -> **Domains**
+2. Thêm domain/subdomain của bạn
+3. Cập nhật DNS theo hướng dẫn của Vercel
+
 ## Xử lý lỗi thường gặp
 
 1. npm is not recognized
