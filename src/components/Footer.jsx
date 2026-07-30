@@ -39,7 +39,7 @@ export default function Footer() {
       <div className="container-main grid gap-12 xl:grid-cols-[1.2fr_2fr_1.2fr]">
         <div>
           <div className="inline-flex rounded-[1.6rem] border border-orange-300/15 bg-white px-5 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.14)]">
-            <CompanyLogo type="full" className="h-16 w-[240px]" />
+            <CompanyLogo type="full" className="h-20 w-[300px] scale-[1.08]" />
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-orange-100/80">
             SunMind Media phát triển hệ sinh thái nội dung thương mại điện tử theo hướng rõ quy trình, giàu sáng tạo và bền vững hiệu quả.
