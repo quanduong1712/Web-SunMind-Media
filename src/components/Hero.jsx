@@ -70,8 +70,8 @@ export default function Hero({ stats }) {
               transition={{ duration: 0.8 }}
               className="absolute inset-0 m-auto flex h-[250px] w-[250px] items-center justify-center rounded-full bg-white shadow-[0_24px_70px_rgba(255,107,0,0.2)]"
             >
-              <div className="flex h-[226px] w-[226px] items-center justify-center rounded-full border border-orange-100 bg-gradient-to-br from-orange-500/10 via-orange-300/10 to-orange-200/10 shadow-[inset_0_12px_34px_rgba(255,255,255,0.45)]">
-                <CompanyLogo type="full" className="h-44 w-56 scale-[1.32]" />
+              <div className="flex h-[236px] w-[236px] items-center justify-center rounded-full border border-orange-100 bg-gradient-to-br from-orange-500/10 via-orange-300/10 to-orange-200/10 shadow-[inset_0_12px_34px_rgba(255,255,255,0.45)]">
+                <CompanyLogo type="full" className="h-52 w-64 scale-[1.36]" />
               </div>
             </motion.div>
 

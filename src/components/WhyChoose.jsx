@@ -57,8 +57,8 @@ export default function WhyChoose({ items }) {
               <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-300" />
             </motion.div>
             <div className="flex h-[220px] w-[220px] items-center justify-center rounded-full border border-orange-100 bg-white shadow-[0_24px_80px_rgba(255,107,0,0.22)]">
-              <div className="flex h-[192px] w-[192px] items-center justify-center rounded-full bg-gradient-to-br from-orange-50 to-white shadow-[inset_0_8px_20px_rgba(255,170,72,0.14)]">
-                <CompanyLogo type="full" className="h-40 w-52 scale-[1.2]" />
+              <div className="flex h-[206px] w-[206px] items-center justify-center rounded-full bg-gradient-to-br from-orange-50 to-white shadow-[inset_0_8px_20px_rgba(255,170,72,0.14)]">
+                <CompanyLogo type="full" className="h-48 w-64 scale-[1.26]" />
               </div>
             </div>
           </motion.div>
