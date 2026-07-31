@@ -36,11 +36,9 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#0f0e0d] pb-8 pt-16 text-white">
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent" />
-      <div className="container-main grid gap-12 xl:grid-cols-[1.8fr_1.5fr_1fr]">
+      <div className="container-main grid gap-12 xl:grid-cols-[1.4fr_1.7fr_1fr]">
         <div>
-          <div className="inline-flex max-w-full overflow-hidden rounded-[2.4rem] border border-orange-300/15 bg-white px-10 py-8 shadow-[0_18px_40px_rgba(0,0,0,0.14)]">
-            <CompanyLogo type="full" className="h-[250px] w-[760px] max-w-none scale-[1.08]" />
-          </div>
+          <CompanyLogo type="full" className="h-[120px] w-[360px] max-w-full" />
           <p className="mt-4 max-w-md text-sm leading-relaxed text-orange-100/80">
             SunMind Media phát triển hệ sinh thái nội dung thương mại điện tử theo hướng rõ quy trình, giàu sáng tạo và bền vững hiệu quả.
           </p>
