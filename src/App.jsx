@@ -156,6 +156,49 @@ const heroTrustSignals = [
   "Báo cáo minh bạch",
 ];
 
+const operationFlow = [
+  {
+    step: "01",
+    title: "Tiếp nhận mục tiêu",
+    desc: "Làm rõ mục tiêu doanh thu, nhóm sản phẩm trọng tâm và nguồn lực triển khai.",
+  },
+  {
+    step: "02",
+    title: "Phân tích sản phẩm",
+    desc: "Đánh giá lợi thế cạnh tranh, insight khách hàng và thông điệp bán hàng phù hợp.",
+  },
+  {
+    step: "03",
+    title: "Lựa chọn Creator",
+    desc: "Chọn Creator theo ngành hàng, tệp người xem và khả năng tạo chuyển đổi.",
+  },
+  {
+    step: "04",
+    title: "Sản xuất nội dung",
+    desc: "Xây dựng kịch bản, chuẩn hóa định dạng và kiểm duyệt chất lượng trước triển khai.",
+  },
+  {
+    step: "05",
+    title: "Triển khai chiến dịch",
+    desc: "Vận hành đa kênh gồm Affiliate, livestream và nội dung ngắn theo đúng timeline.",
+  },
+  {
+    step: "06",
+    title: "Theo dõi dữ liệu",
+    desc: "Theo dõi các chỉ số chính: traffic, đơn hàng, GMV, tỷ lệ chuyển đổi và hiệu suất kênh.",
+  },
+  {
+    step: "07",
+    title: "Tối ưu theo chu kỳ",
+    desc: "Điều chỉnh thông điệp, tệp Creator và ngân sách dựa trên dữ liệu thực tế.",
+  },
+  {
+    step: "08",
+    title: "Báo cáo kết quả",
+    desc: "Tổng hợp minh bạch kết quả, bài học và đề xuất giai đoạn tăng trưởng tiếp theo.",
+  },
+];
+
 function PageHeader({ title, subtitle }) {
   return (
     <section className="section-wrap pb-0 pt-24 md:pt-28">
@@ -354,13 +397,33 @@ export default function App() {
 
       <section className="section-wrap pt-0">
         <div className="container-main rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
-          <h3 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Quy trình vận hành</h3>
-          <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
-            {"Tiếp nhận mục tiêu -> Phân tích sản phẩm -> Lựa chọn Creator -> Sản xuất nội dung -> Triển khai -> Theo dõi dữ liệu -> Tối ưu -> Báo cáo"}
-          </p>
-          <p className="mt-4 text-sm text-sunmind-gray">
-            SUNMIND tập trung chứng minh năng lực bằng quy trình rõ ràng, minh bạch và có thể theo dõi hiệu suất theo từng giai đoạn.
-          </p>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-sunmind-primary">Quy trình triển khai</p>
+              <h3 className="mt-2 text-2xl font-extrabold text-sunmind-dark md:text-4xl">Quy trình vận hành</h3>
+            </div>
+            <p className="max-w-xl text-sm leading-relaxed text-sunmind-gray md:text-base">
+              Mỗi chiến dịch được vận hành theo 8 bước liên tục, giúp đội ngũ và đối tác theo dõi tiến độ rõ ràng từ mục tiêu đến kết quả.
+            </p>
+          </div>
+
+          <div className="enterprise-divider my-6" />
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {operationFlow.map((item) => (
+              <article key={item.step} className="rounded-[1.2rem] border border-orange-100 bg-white p-4 shadow-sm">
+                <p className="text-xs font-bold tracking-[0.16em] text-sunmind-primary">BƯỚC {item.step}</p>
+                <h4 className="mt-2 text-lg font-extrabold text-sunmind-dark">{item.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-sunmind-gray">{item.desc}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-xl border border-orange-200 bg-orange-50/50 px-4 py-4">
+            <p className="text-sm font-semibold text-sunmind-dark">
+              Cam kết vận hành: rõ mục tiêu, rõ chỉ số, rõ trách nhiệm ở từng bước để tối đa hiệu quả triển khai.
+            </p>
+          </div>
         </div>
       </section>
 
