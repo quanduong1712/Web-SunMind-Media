@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   achievements,
   caseStudies,
-  creators,
   ecosystemNodes,
   faqs,
   leadership,
@@ -20,7 +19,6 @@ import Services from "./components/Services";
 import WhyChoose from "./components/WhyChoose";
 import Process from "./components/Process";
 import Ecosystem from "./components/Ecosystem";
-import Creators from "./components/Creators";
 import Achievements from "./components/Achievements";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
@@ -133,7 +131,6 @@ export default function App() {
         </div>
         <CaseStudies items={caseStudies} />
         <Leadership leaders={leadership} />
-        <Creators creators={creators} />
         <div id="partners">
           <Suspense fallback={<LazySectionFallback />}>
             <Partners names={partnerNames} />
