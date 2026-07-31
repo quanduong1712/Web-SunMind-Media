@@ -208,7 +208,7 @@ export default function App() {
       <section className="section-wrap relative overflow-hidden pb-8 pt-28 md:pt-32">
         <div className="pointer-events-none absolute -left-16 top-24 h-72 w-72 rounded-full bg-orange-200/35 blur-3xl" />
         <div className="pointer-events-none absolute -right-16 top-8 h-72 w-72 rounded-full bg-amber-200/25 blur-3xl" />
-        <div className="container-main grid gap-6 xl:grid-cols-[1.1fr_0.9fr] xl:items-stretch">
+        <div className="container-main grid gap-6 xl:grid-cols-[1.08fr_0.92fr] xl:items-stretch">
           <div className="h-full rounded-[2rem] border border-orange-100 bg-white p-7 shadow-[0_28px_80px_rgba(28,20,5,0.08)] md:p-9">
             <div className="flex flex-wrap items-center gap-3">
               <p className="eyebrow">SUNMIND MEDIA</p>
@@ -241,17 +241,9 @@ export default function App() {
                 </span>
               ))}
             </div>
-
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              {homeStats.slice(0, 4).map((stat) => (
-                <div key={stat} className="rounded-xl border border-orange-100 bg-orange-50/45 px-4 py-3 text-sm font-semibold text-sunmind-dark">
-                  {stat}
-                </div>
-              ))}
-            </div>
           </div>
 
-          <div className="flex h-full flex-col rounded-[2rem] border border-orange-100 bg-gradient-to-b from-white to-orange-50/50 p-7 shadow-[0_24px_60px_rgba(35,20,0,0.08)] md:p-9">
+          <div className="h-full rounded-[2rem] border border-orange-100 bg-gradient-to-b from-white to-orange-50/50 p-7 shadow-[0_24px_60px_rgba(35,20,0,0.08)] md:p-9">
             <h2 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Bản đồ tăng trưởng</h2>
             <p className="mt-3 text-sm leading-relaxed text-sunmind-gray md:text-base">
               Mỗi chiến dịch được vận hành như một mô hình tăng trưởng đầy đủ: từ insight đến doanh thu.
@@ -274,7 +266,7 @@ export default function App() {
                 );
               })}
             </div>
-            <div className="mt-auto rounded-xl border border-orange-200/80 bg-white px-4 py-4">
+            <div className="mt-5 rounded-xl border border-orange-200/80 bg-white px-4 py-4">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sunmind-primary">Tăng tốc chuyển đổi</p>
               <p className="mt-2 text-sm text-sunmind-gray">Xem cách SunMind thiết kế mô hình hợp tác cho thương hiệu trong 3 bước triển khai đầu tiên.</p>
               <button
@@ -291,10 +283,10 @@ export default function App() {
 
       <section className="section-wrap py-0">
         <div className="container-main grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {homeStats.slice(4).map((stat) => (
-            <article key={stat} className="relative overflow-hidden rounded-[1.4rem] border border-orange-100 bg-white px-5 py-5 shadow-sm">
+          {homeStats.map((stat) => (
+            <article key={stat} className="relative overflow-hidden rounded-[1.25rem] border border-orange-100 bg-white px-5 py-4 shadow-sm">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-transparent" />
-              <p className="text-base font-bold text-sunmind-dark md:text-lg">{stat}</p>
+              <p className="text-sm font-bold text-sunmind-dark md:text-base">{stat}</p>
             </article>
           ))}
         </div>
@@ -302,17 +294,43 @@ export default function App() {
 
       <section className="section-wrap">
         <div className="container-main rounded-[2rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
-          <h2 className="text-3xl font-black text-sunmind-dark md:text-5xl">Giới thiệu ngắn về SUNMIND</h2>
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
-            <p>
-              SUNMIND MEDIA là đơn vị truyền thông và thương mại nội dung tập trung vào hệ sinh thái Creator Commerce. Chúng tôi kết nối Creator, thương hiệu và nền tảng bằng cách làm việc theo quy trình rõ ràng và mục tiêu đo lường cụ thể.
-            </p>
-            <p>
-              Từ tuyển chọn Creator, xây dựng nội dung, triển khai livestream đến tối ưu chuyển đổi, mọi hoạt động đều được vận hành dựa trên dữ liệu và phản hồi thực tế từ thị trường.
-            </p>
-            <p>
-              SUNMIND ưu tiên giá trị dài hạn: nội dung đúng tệp, vận hành đúng nhịp, và tăng trưởng đủ bền để có thể mở rộng theo từng giai đoạn.
-            </p>
+          <div className="grid gap-7 xl:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <h2 className="text-3xl font-black text-sunmind-dark md:text-5xl">Giới thiệu ngắn về SUNMIND</h2>
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+                <p>
+                  SUNMIND MEDIA là đơn vị truyền thông và thương mại nội dung tập trung vào hệ sinh thái Creator Commerce. Chúng tôi kết nối Creator, thương hiệu và nền tảng bằng cách làm việc theo quy trình rõ ràng và mục tiêu đo lường cụ thể.
+                </p>
+                <p>
+                  Từ tuyển chọn Creator, xây dựng nội dung, triển khai livestream đến tối ưu chuyển đổi, mọi hoạt động đều được vận hành dựa trên dữ liệu và phản hồi thực tế từ thị trường.
+                </p>
+                <p>
+                  SUNMIND ưu tiên giá trị dài hạn: nội dung đúng tệp, vận hành đúng nhịp, và tăng trưởng đủ bền để có thể mở rộng theo từng giai đoạn.
+                </p>
+              </div>
+            </div>
+
+            <aside className="rounded-[1.4rem] border border-orange-100 bg-orange-50/45 p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-sunmind-primary">Lợi thế triển khai</p>
+              <div className="mt-4 grid gap-3">
+                {[
+                  "Đội ngũ vận hành chuyên trách theo ngành hàng",
+                  "Quy trình phối hợp rõ vai trò, rõ thời gian",
+                  "Hệ theo dõi hiệu suất và báo cáo định kỳ",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-orange-100 bg-white px-4 py-3 text-sm font-semibold text-sunmind-dark">
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={() => setActivePage("about")}
+                className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-sunmind-primary transition hover:text-orange-700"
+              >
+                Xem thêm về SUNMIND <ArrowRight size={15} />
+              </button>
+            </aside>
           </div>
         </div>
       </section>
