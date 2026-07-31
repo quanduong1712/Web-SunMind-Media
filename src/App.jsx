@@ -75,46 +75,66 @@ export default function App() {
           <Services items={serviceItems} />
         </div>
 
-        <section id="about" className="section-wrap">
+        <section id="about" className="section-wrap light-band overflow-hidden">
           <div className="container-main">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mx-auto max-w-5xl rounded-[2.2rem] border border-orange-100/80 bg-white/90 p-6 shadow-soft md:p-10"
+              className="mx-auto max-w-6xl rounded-[2.4rem] border border-orange-100/80 bg-white/92 p-6 shadow-soft md:p-10 xl:p-12"
             >
-              <article className="rounded-[1.6rem] border border-orange-100 bg-sunmind-light p-6 md:p-8">
-                <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Tầm nhìn</span>
-                <h3 className="mt-4 text-3xl font-extrabold leading-tight md:text-[2.15rem]">
-                  Trở thành hệ sinh thái Creator Commerce có năng lực phát triển nhà sáng tạo, sản xuất nội dung và thúc đẩy tăng trưởng kinh doanh trên các nền tảng thương mại điện tử.
-                </h3>
-              </article>
-
-              <article className="mt-4 rounded-[1.6rem] border border-orange-100 bg-white p-6 md:p-8">
-                <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Sứ mệnh</span>
-                <p className="mt-4 text-lg leading-relaxed text-sunmind-gray">
-                  Giúp creator phát triển bền vững thông qua định hướng nội dung, hệ thống hỗ trợ sản xuất, năng lực đọc dữ liệu và cơ hội thương mại phù hợp theo từng giai đoạn.
+              <div className="mx-auto max-w-4xl text-center">
+                <span className="eyebrow">GIỚI THIỆU SUNMIND</span>
+                <h2 className="section-heading mt-5 text-4xl font-extrabold md:text-5xl xl:text-6xl">
+                  Tầm nhìn, sứ mệnh và <span className="text-sunmind-primary">giá trị cốt lõi</span>
+                </h2>
+                <p className="mx-auto mt-5 text-base leading-relaxed text-sunmind-gray md:text-lg">
+                  SunMind phát triển như một hệ sinh thái nội dung thương mại điện tử với định hướng rõ ràng,
+                  cách vận hành kỷ luật và mục tiêu tăng trưởng bền vững cho creator, nền tảng và thương hiệu.
                 </p>
-              </article>
+              </div>
 
-              <div className="mt-10">
-                <SectionTitle
-                  eyebrow="GIÁ TRỊ CỐT LÕI"
-                  title="Giá trị cốt lõi"
-                  highlight="SunMind"
-                  desc="Nền tảng vận hành của SunMind tập trung vào hiệu quả, quy trình và khả năng đồng hành dài hạn với creator, nền tảng và thương hiệu."
-                />
+              <div className="mt-10 grid gap-5 lg:grid-cols-[1.25fr_0.95fr]">
+                <article className="rounded-[1.8rem] border border-orange-100 bg-[linear-gradient(135deg,rgba(255,248,238,0.95),rgba(255,255,255,0.96))] p-7 shadow-sm md:p-9">
+                  <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Tầm nhìn</span>
+                  <h3 className="mt-4 text-3xl font-extrabold leading-tight md:text-[2.3rem]">
+                    Trở thành hệ sinh thái Creator Commerce có năng lực phát triển nhà sáng tạo, sản xuất nội dung và thúc đẩy tăng trưởng kinh doanh trên các nền tảng thương mại điện tử.
+                  </h3>
+                </article>
 
-                <div className="mt-6 grid gap-3">
+                <article className="rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-sm md:p-9">
+                  <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Sứ mệnh</span>
+                  <p className="mt-4 text-lg leading-relaxed text-sunmind-gray">
+                    Giúp creator phát triển bền vững thông qua định hướng nội dung, hệ thống hỗ trợ sản xuất,
+                    năng lực đọc dữ liệu và cơ hội thương mại phù hợp theo từng giai đoạn.
+                  </p>
+                </article>
+              </div>
+
+              <div className="mt-10 rounded-[1.8rem] border border-orange-100 bg-[linear-gradient(180deg,rgba(255,252,247,0.9),rgba(255,255,255,0.96))] p-6 md:p-8">
+                <div className="mx-auto max-w-3xl text-center">
+                  <span className="eyebrow">GIÁ TRỊ CỐT LÕI</span>
+                  <h3 className="mt-5 text-3xl font-extrabold md:text-5xl">
+                    Giá trị cốt lõi <span className="text-sunmind-primary">SunMind</span>
+                  </h3>
+                  <p className="mx-auto mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+                    Nền tảng vận hành của SunMind tập trung vào hiệu quả, quy trình và khả năng đồng hành dài hạn với creator, nền tảng và thương hiệu.
+                  </p>
+                </div>
+
+                <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {coreValues.map((value, idx) => (
                     <article
                       key={value.title}
-                      className="rounded-2xl border border-orange-100 bg-white px-4 py-4 shadow-sm transition hover:shadow-md"
+                      className="rounded-[1.4rem] border border-orange-100 bg-white px-5 py-5 shadow-sm transition hover:shadow-md"
                     >
-                      <p className="text-lg font-bold text-sunmind-dark">
-                        0{idx + 1}. {value.title}
-                      </p>
-                      <p className="mt-1 text-sm leading-relaxed text-sunmind-gray">{value.desc}</p>
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-orange-200 bg-orange-50 text-sm font-bold text-sunmind-primary">
+                          0{idx + 1}
+                        </div>
+                        <p className="text-lg font-bold text-sunmind-dark">{value.title}</p>
+                      </div>
+                      <p className="mt-4 text-sm leading-relaxed text-sunmind-gray">{value.desc}</p>
                     </article>
                   ))}
                 </div>
