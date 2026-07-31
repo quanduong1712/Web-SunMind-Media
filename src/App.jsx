@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { ArrowRight, BadgeCheck, ShieldCheck, TrendingUp, Zap } from "lucide-react";
 import Navbar from "./components/Navbar";
 import MagneticButton from "./components/MagneticButton";
 import Footer from "./components/Footer";
@@ -131,6 +132,30 @@ const collaborationTabs = [
   { key: "platform", label: "Dành cho nền tảng" },
 ];
 
+const heroPillars = [
+  {
+    title: "Performance Blueprint",
+    desc: "Thiết kế lộ trình tăng trưởng theo mục tiêu doanh thu và ngân sách thực tế.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Creator-Market Fit",
+    desc: "Matching Creator với ngành hàng và hành vi mua sắm để tăng tỷ lệ chuyển đổi.",
+    icon: Zap,
+  },
+  {
+    title: "Full-Funnel Visibility",
+    desc: "Theo dõi minh bạch từ content đến GMV, tối ưu theo chu kỳ triển khai.",
+    icon: ShieldCheck,
+  },
+];
+
+const heroTrustSignals = [
+  "Chiến lược theo KPI",
+  "Vận hành end-to-end",
+  "Báo cáo minh bạch",
+];
+
 function PageHeader({ title, subtitle }) {
   return (
     <section className="section-wrap pb-0 pt-28 md:pt-32">
@@ -180,36 +205,78 @@ export default function App() {
 
   const renderHomePage = () => (
     <>
-      <section className="section-wrap pb-10 pt-32 md:pt-36">
+      <section className="section-wrap relative overflow-hidden pb-10 pt-32 md:pt-36">
+        <div className="pointer-events-none absolute -left-16 top-24 h-72 w-72 rounded-full bg-orange-200/35 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 top-8 h-72 w-72 rounded-full bg-amber-200/25 blur-3xl" />
         <div className="container-main grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[2rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
-            <p className="eyebrow">TRANG CHỦ</p>
+          <div className="rounded-[2rem] border border-orange-100 bg-white p-7 shadow-[0_28px_80px_rgba(28,20,5,0.08)] md:p-10">
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="eyebrow">SUNMIND MEDIA</p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-sunmind-primary">
+                <BadgeCheck size={13} /> Premium Growth Partner
+              </span>
+            </div>
             <h1 className="mt-4 text-4xl font-black leading-tight text-sunmind-dark md:text-6xl">
-              Kết nối Creator - Tăng trưởng doanh thu - Lan tỏa thương hiệu
+              Creator Commerce Engine cho <span className="text-sunmind-primary">thương hiệu muốn scale doanh thu</span>
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-sunmind-gray md:text-lg">
-              SUNMIND MEDIA cung cấp giải pháp phát triển Creator, Affiliate Marketing, sản xuất nội dung và vận hành Livestream Commerce cho thương hiệu trên các nền tảng thương mại điện tử.
+              SunMind kết hợp chiến lược Creator, nội dung chuyển đổi và vận hành livestream để tạo tăng trưởng bền vững,
+              không phụ thuộc vào các chiến dịch ngắn hạn.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}>
-                Trở thành đối tác của SUNMIND
+                <span className="inline-flex items-center gap-2">Đặt lịch tư vấn chiến lược <ArrowRight size={16} /></span>
               </MagneticButton>
               <MagneticButton onClick={() => setActivePage("creator-network")} light className="border-orange-300 text-sunmind-primary">
                 Đăng ký trở thành Creator
               </MagneticButton>
             </div>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {heroTrustSignals.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-orange-200 bg-white px-3 py-1 text-xs font-semibold text-sunmind-gray"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="rounded-[2rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
-            <h2 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">4 câu hỏi người xem cần thấy ngay</h2>
-            <BulletList
-              items={[
-                "SUNMIND là ai?",
-                "SUNMIND cung cấp dịch vụ gì?",
-                "SUNMIND đã làm được gì?",
-                "Khách hàng nên liên hệ bằng cách nào?",
-              ]}
-            />
+          <div className="rounded-[2rem] border border-orange-100 bg-gradient-to-b from-white to-orange-50/50 p-7 shadow-[0_24px_60px_rgba(35,20,0,0.08)] md:p-10">
+            <h2 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Growth Blueprint</h2>
+            <p className="mt-3 text-sm leading-relaxed text-sunmind-gray md:text-base">
+              Mỗi chiến dịch được vận hành như một mô hình tăng trưởng đầy đủ: từ insight đến doanh thu.
+            </p>
+            <div className="mt-6 grid gap-3">
+              {heroPillars.map((pillar) => {
+                const Icon = pillar.icon;
+                return (
+                  <article key={pillar.title} className="rounded-xl border border-orange-100 bg-white px-4 py-4 shadow-sm">
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-lg border border-orange-200 bg-orange-50 p-2 text-sunmind-primary">
+                        <Icon size={15} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-bold text-sunmind-dark">{pillar.title}</p>
+                        <p className="mt-1 text-xs leading-relaxed text-sunmind-gray">{pillar.desc}</p>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="mt-6 rounded-xl border border-orange-200/80 bg-white px-4 py-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sunmind-primary">Tăng tốc chuyển đổi</p>
+              <p className="mt-2 text-sm text-sunmind-gray">Xem cách SunMind thiết kế mô hình hợp tác cho Brand trong 3 bước triển khai đầu tiên.</p>
+              <button
+                type="button"
+                onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}
+                className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-sunmind-primary transition hover:text-orange-700"
+              >
+                Xem mô hình hợp tác <ArrowRight size={15} />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -217,7 +284,8 @@ export default function App() {
       <section className="section-wrap py-0">
         <div className="container-main grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {homeStats.map((stat) => (
-            <article key={stat} className="rounded-[1.4rem] border border-orange-100 bg-white px-5 py-5 shadow-sm">
+            <article key={stat} className="relative overflow-hidden rounded-[1.4rem] border border-orange-100 bg-white px-5 py-5 shadow-sm">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-transparent" />
               <p className="text-base font-bold text-sunmind-dark md:text-lg">{stat}</p>
             </article>
           ))}
@@ -294,12 +362,25 @@ export default function App() {
       <section className="section-wrap dark-grid relative overflow-hidden">
         <div className="absolute left-1/2 top-0 h-36 w-[70%] -translate-x-1/2 rounded-full bg-orange-300/20 blur-3xl" />
         <div className="container-main rounded-[2rem] border border-orange-400/20 bg-white/5 px-6 py-14 text-center backdrop-blur md:px-12">
-          <h2 className="text-3xl font-black text-white md:text-5xl">Kêu gọi hợp tác</h2>
+          <h2 className="text-3xl font-black text-white md:text-5xl">Sẵn sàng biến nội dung thành doanh thu?</h2>
           <p className="mx-auto mt-5 max-w-4xl text-base leading-relaxed text-orange-100/90 md:text-lg">
-            Bạn là Brand đang tìm kiếm Creator phù hợp? Bạn là Creator muốn phát triển doanh thu Affiliate? Hãy cùng SUNMIND xây dựng một mô hình hợp tác minh bạch và bền vững.
+            SunMind giúp bạn đi từ ý tưởng chiến dịch đến kết quả thương mại bằng một hệ vận hành có thể đo lường và mở rộng.
           </p>
+          <div className="mx-auto mt-6 grid max-w-4xl gap-3 text-left md:grid-cols-3">
+            {[
+              "Lộ trình 90 ngày để kiểm chứng hiệu quả",
+              "Đội ngũ triển khai bám sát KPI theo tuần",
+              "Báo cáo rõ ràng cho từng giai đoạn",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-orange-300/30 bg-white/10 px-4 py-3 text-sm font-semibold text-orange-100">
+                {item}
+              </div>
+            ))}
+          </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}>Dành cho Brand</MagneticButton>
+            <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}>
+              <span className="inline-flex items-center gap-2">Nhận plan cho Brand <ArrowRight size={16} /></span>
+            </MagneticButton>
             <MagneticButton onClick={() => setActivePage("creator-network")} light className="text-white">Dành cho Creator</MagneticButton>
             <MagneticButton onClick={() => setActivePage("contact")} light className="text-white">Liên hệ SUNMIND</MagneticButton>
           </div>
@@ -312,7 +393,7 @@ export default function App() {
     <>
       <PageHeader
         title="Về SUNMIND"
-        subtitle="Hành trình xây dựng hệ sinh thái Creator Commerce với trọng tâm là hiệu quả triển khai, tính minh bạch và sự đồng hành dài hạn."
+        subtitle="Một đơn vị vận hành Creator Commerce theo định hướng dài hạn: chiến lược rõ, quy trình chắc và kết quả đo lường được."
       />
 
       <section className="section-wrap">
@@ -364,7 +445,7 @@ export default function App() {
     <>
       <PageHeader
         title="Dịch vụ"
-        subtitle="Giải pháp tăng trưởng toàn diện cho Creator và thương hiệu, triển khai theo mục tiêu cụ thể, quy trình rõ ràng và hệ đo lường nhất quán."
+        subtitle="Giải pháp tăng trưởng cho Creator và thương hiệu, thiết kế theo mục tiêu kinh doanh và hành vi người mua trên từng nền tảng."
       />
 
       <section className="section-wrap pt-8">
@@ -476,7 +557,7 @@ export default function App() {
     <>
       <PageHeader
         title="Creator Network"
-        subtitle="Kết nối đúng Creator để tạo giá trị thực: đúng nội dung, đúng tệp người xem và đúng mục tiêu thương mại."
+        subtitle="Mạng lưới Creator được tuyển chọn theo độ phù hợp ngành hàng, chất lượng nội dung và năng lực tạo hiệu quả thương mại."
       />
 
       <section className="section-wrap">
@@ -666,7 +747,7 @@ export default function App() {
 
   const renderCollaborationPage = () => (
     <>
-      <PageHeader title="Hợp tác" subtitle="Trong mục Hợp tác gồm: Dành cho Brand, Dành cho Creator, Dành cho nền tảng." />
+      <PageHeader title="Hợp tác" subtitle="Chọn hình thức hợp tác phù hợp để bắt đầu nhanh, vận hành chắc và mở rộng bền vững cùng SunMind." />
       
 
       <section className="section-wrap pt-8">
@@ -696,7 +777,7 @@ export default function App() {
 
   const renderContactPage = () => (
     <>
-      <PageHeader title="Liên hệ" subtitle="Kết nối trực tiếp với SUNMIND để nhận tư vấn hợp tác phù hợp mục tiêu." />
+      <PageHeader title="Liên hệ" subtitle="Để lại nhu cầu của bạn, đội ngũ SunMind sẽ phản hồi nhanh với đề xuất phù hợp mục tiêu triển khai." />
 
       <section className="section-wrap">
         <div className="container-main grid gap-5 xl:grid-cols-[1fr_1.1fr]">
