@@ -13,11 +13,11 @@ import {
 } from "lucide-react";
 
 export const navItems = [
-  "Giới thiệu",
-  "Năng lực",
-  "Hệ sinh thái",
-  "Dự án",
-  "Đối tác",
+  "Trang chủ",
+  "Về SUNMIND",
+  "Dịch vụ",
+  "Creator Network",
+  "Hợp tác",
   "Liên hệ",
 ];
 

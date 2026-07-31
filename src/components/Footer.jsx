@@ -1,34 +1,31 @@
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import CompanyLogo from "./CompanyLogo";
 
-export default function Footer() {
+export default function Footer({ onNavigate = () => {} }) {
   const cols = [
     {
       title: "Về chúng tôi",
       items: [
-        { label: "Giới thiệu", href: "#about" },
-        { label: "Sứ mệnh & tầm nhìn", href: "#about" },
-        { label: "Đội ngũ", href: "#about" },
-        { label: "Hợp tác Shopee", href: "#partners" },
+        { label: "Trang chủ", page: "home" },
+        { label: "Về SUNMIND", page: "about" },
+        { label: "Dịch vụ", page: "services" },
+        { label: "Creator Network", page: "creator-network" },
       ],
     },
     {
-      title: "Dịch vụ",
+      title: "Hợp tác",
       items: [
-        { label: "Creator Recruitment", href: "#services" },
-        { label: "Content Enablement", href: "#services" },
-        { label: "Commerce Activation", href: "#services" },
-        { label: "Livestream Commerce", href: "#services" },
-        { label: "Performance Optimization", href: "#services" },
+        { label: "Dành cho Brand", page: "collaboration" },
+        { label: "Dành cho Creator", page: "creator-network" },
+        { label: "Dành cho nền tảng", page: "collaboration" },
       ],
     },
     {
       title: "Hỗ trợ",
       items: [
-        { label: "Case Study", href: "#testimonials" },
-        { label: "FAQ", href: "#faq" },
-        { label: "Cam kết hợp tác", href: "#partners" },
-        { label: "Liên hệ", href: "#contact" },
+        { label: "Liên hệ", page: "contact" },
+        { label: "Đăng ký Creator", page: "creator-network" },
+        { label: "Nhận tư vấn dịch vụ", page: "services" },
       ],
     },
   ];
@@ -58,9 +55,13 @@ export default function Footer() {
               <ul className="mt-4 space-y-2 text-sm text-orange-100/85">
                 {col.items.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="transition hover:text-orange-200">
+                    <button
+                      type="button"
+                      onClick={() => onNavigate(item.page)}
+                      className="transition hover:text-orange-200"
+                    >
                       {item.label}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

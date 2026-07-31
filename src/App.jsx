@@ -1,193 +1,765 @@
-import { lazy, Suspense } from "react";
-import { motion } from "framer-motion";
-import {
-  achievements,
-  caseStudies,
-  ecosystemNodes,
-  faqs,
-  leadership,
-  partnerNames,
-  processSteps,
-  serviceItems,
-  testimonials,
-  trustBadges,
-  valueItems,
-} from "./data";
+import { useEffect, useMemo, useState } from "react";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import WhyChoose from "./components/WhyChoose";
-import Process from "./components/Process";
-import Ecosystem from "./components/Ecosystem";
-import Achievements from "./components/Achievements";
-import FAQ from "./components/FAQ";
-import Footer from "./components/Footer";
 import MagneticButton from "./components/MagneticButton";
-import SectionTitle from "./components/SectionTitle";
-import TrustBadges from "./components/TrustBadges";
-import CaseStudies from "./components/CaseStudies";
-import Leadership from "./components/Leadership";
+import Footer from "./components/Footer";
 
-const Partners = lazy(() => import("./components/Partners"));
-const Testimonials = lazy(() => import("./components/Testimonials"));
+const homeStats = [
+  "50+ Creator/KOC đang hợp tác",
+  "120+ chiến dịch đã triển khai",
+  "3000+ nội dung được sản xuất",
+  "300+ phiên livestream",
+  "20+ tỷ đồng GMV",
+  "35% tăng trưởng trung bình",
+];
 
-function LazySectionFallback() {
+const homeServiceGroups = [
+  {
+    title: "Creator Management",
+    items: [
+      "Tuyển chọn Creator",
+      "Đào tạo và định hướng nội dung",
+      "Quản lý hiệu suất",
+      "Kết nối chiến dịch và nhãn hàng",
+      "Xây dựng lộ trình phát triển dài hạn",
+    ],
+  },
+  {
+    title: "Affiliate Marketing",
+    items: [
+      "Xây dựng mạng lưới Affiliate Creator",
+      "Phân phối sản phẩm phù hợp",
+      "Theo dõi doanh thu và đơn hàng",
+      "Tối ưu nội dung theo hiệu suất",
+      "Báo cáo chiến dịch",
+    ],
+  },
+  {
+    title: "Livestream Commerce",
+    items: [
+      "Xây dựng kịch bản livestream",
+      "Tuyển chọn và đào tạo host",
+      "Setup phòng livestream",
+      "Vận hành phiên live",
+      "Theo dõi traffic, tỷ lệ chuyển đổi và GMV",
+    ],
+  },
+  {
+    title: "Content Production",
+    items: [
+      "Nghiên cứu insight",
+      "Lên ý tưởng và kịch bản",
+      "Quay dựng video",
+      "Kiểm duyệt nội dung",
+      "Sản xuất nội dung bán hàng đa nền tảng",
+    ],
+  },
+  {
+    title: "Brand Campaign",
+    items: [
+      "Kết nối Brand với Creator",
+      "Triển khai chiến dịch KOC",
+      "Seeding và review sản phẩm",
+      "Quản lý tiến độ, nội dung và báo cáo",
+      "Đánh giá hiệu quả chiến dịch",
+    ],
+  },
+];
+
+const aboutStory = [
+  "SUNMIND MEDIA được hình thành từ một câu hỏi rất thực tế: làm thế nào để Creator, thương hiệu và nền tảng thương mại điện tử có thể kết nối với nhau hiệu quả hơn, minh bạch hơn và cùng tạo ra giá trị lâu dài?",
+  "Trong quá trình trực tiếp tham gia lĩnh vực Affiliate Marketing, sản xuất nội dung và vận hành bán hàng trên các nền tảng thương mại điện tử, chúng tôi nhận ra rằng thị trường không thiếu Creator, không thiếu sản phẩm và cũng không thiếu cơ hội. Điều còn thiếu là một hệ thống đủ rõ ràng để kết nối đúng người, đúng sản phẩm và đúng cách triển khai.",
+  "Nhiều Creator có khả năng sáng tạo nhưng chưa có định hướng phát triển, thiếu dữ liệu để tối ưu nội dung và chưa tiếp cận được những cơ hội hợp tác phù hợp. Trong khi đó, nhiều thương hiệu mong muốn triển khai Affiliate, KOC và Livestream nhưng gặp khó khăn trong việc lựa chọn Creator, kiểm soát chất lượng nội dung và đánh giá hiệu quả chiến dịch.",
+  "Từ những bài toán thực tế đó, SUNMIND MEDIA được thành lập vào năm 2025 với định hướng xây dựng một hệ sinh thái Creator Commerce chuyên nghiệp, nơi Creator được hỗ trợ để phát triển đúng năng lực, thương hiệu có thể triển khai chiến dịch minh bạch và các nền tảng nhận được giá trị tăng trưởng bền vững.",
+  "Đó cũng là cách SUNMIND từng bước hiện thực hóa sứ mệnh của mình: kết nối giá trị, lan tỏa thương hiệu và kiến tạo tương lai cho hệ sinh thái thương mại nội dung.",
+];
+
+const coreValues = [
+  {
+    title: "Minh bạch",
+    desc: "SUNMIND đề cao sự rõ ràng trong mọi hoạt động hợp tác, từ quy trình triển khai, quyền lợi, trách nhiệm đến dữ liệu và kết quả.",
+  },
+  {
+    title: "Hiệu quả",
+    desc: "Mọi hoạt động đều hướng tới kết quả có thể đo lường, tối ưu hiệu suất và tạo ra giá trị thực cho Creator, thương hiệu và nền tảng.",
+  },
+  {
+    title: "Đồng hành",
+    desc: "SUNMIND đồng hành cùng đối tác từ định hướng, triển khai đến đánh giá và phát triển dài hạn.",
+  },
+  {
+    title: "Đổi mới",
+    desc: "Chủ động cập nhật xu hướng, công nghệ và phương thức vận hành mới để thích ứng nhanh với thị trường.",
+  },
+  {
+    title: "Phát triển bền vững",
+    desc: "Ưu tiên tăng trưởng cân bằng giữa doanh thu, chất lượng nội dung và giá trị hợp tác lâu dài.",
+  },
+  {
+    title: "Trách nhiệm",
+    desc: "Chịu trách nhiệm với từng cam kết, từng nội dung và từng kết quả triển khai trong mọi dự án.",
+  },
+];
+
+const serviceOverview = [
+  "Quản lý và phát triển Creator",
+  "Affiliate Marketing",
+  "Livestream Commerce",
+  "Sản xuất nội dung",
+  "Chiến dịch dành cho thương hiệu",
+];
+
+const creatorGroups = [
+  "Content Creator",
+  "Affiliate Creator",
+  "KOC/Review Creator",
+  "Livestream Host",
+  "Performance Creator",
+];
+
+const creatorCriteria = [
+  "Sự phù hợp với ngành hàng",
+  "Chất lượng và phong cách nội dung",
+  "Tệp người xem",
+  "Mức độ tương tác",
+  "Hiệu suất Affiliate hoặc Livestream",
+  "Tinh thần hợp tác và tiềm năng phát triển",
+];
+
+const collaborationTabs = [
+  { key: "brand", label: "Dành cho Brand" },
+  { key: "creator", label: "Dành cho Creator" },
+  { key: "platform", label: "Dành cho nền tảng" },
+];
+
+function PageHeader({ title, subtitle }) {
   return (
-    <section className="section-wrap">
+    <section className="section-wrap pb-0 pt-28 md:pt-32">
       <div className="container-main">
-        <div className="section-enterprise h-48 animate-pulse bg-orange-50/70" />
+        <div className="rounded-[1.8rem] border border-orange-100 bg-white px-6 py-7 shadow-soft md:px-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-sunmind-primary">SunMind Media</p>
+          <h1 className="mt-2 text-3xl font-black text-sunmind-dark md:text-5xl">{title}</h1>
+          {subtitle ? <p className="mt-4 max-w-4xl text-base text-sunmind-gray md:text-lg">{subtitle}</p> : null}
+        </div>
       </div>
     </section>
   );
 }
 
-const coreValues = [
-  {
-    title: "Tư duy hiệu quả",
-    desc: "Mọi hoạt động được định hướng bằng mục tiêu cụ thể và có khả năng đo lường thông qua dữ liệu, nội dung và kết quả thương mại.",
-  },
-  {
-    title: "Lấy creator làm trọng tâm",
-    desc: "Tôn trọng cá tính nhà sáng tạo và xây dựng lộ trình phát triển phù hợp với năng lực, phong cách và tệp người xem.",
-  },
-  {
-    title: "Tăng trưởng có chọn lọc",
-    desc: "Ưu tiên creator có tiềm năng phát triển dài hạn, không mở rộng mạng lưới bằng số lượng đơn thuần.",
-  },
-  {
-    title: "Kỷ luật vận hành",
-    desc: "Làm việc theo quy trình rõ ràng, có phân công, theo dõi và đánh giá kết quả để đảm bảo chất lượng triển khai ổn định.",
-  },
-  {
-    title: "Hợp tác dài hạn",
-    desc: "Hướng đến quan hệ hợp tác bền vững với nền tảng, creator, thương hiệu và đối tác thương mại điện tử.",
-  },
-];
+function BulletList({ items }) {
+  return (
+    <ul className="mt-4 space-y-2 text-sm leading-relaxed text-sunmind-gray md:text-base">
+      {items.map((item) => (
+        <li key={item} className="flex gap-2">
+          <span className="mt-1 h-2 w-2 rounded-full bg-sunmind-primary" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function App() {
-  return (
-    <div className="bg-sunmind-bg text-sunmind-dark">
-      <Navbar />
-      <main>
-        <Hero stats={achievements} />
+  const [activePage, setActivePage] = useState("home");
+  const [collaborationTarget, setCollaborationTarget] = useState("brand");
 
-        <div id="services" className="flow-surface">
-          <Services items={serviceItems} />
-        </div>
+  const pageTitles = useMemo(
+    () => ({
+      home: "Trang chủ",
+      about: "Về SUNMIND",
+      services: "Dịch vụ",
+      "creator-network": "Creator Network",
+      collaboration: "Hợp tác",
+      contact: "Liên hệ",
+    }),
+    []
+  );
 
-        <section id="about" className="section-wrap light-band overflow-hidden">
-          <div className="container-main">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mx-auto max-w-6xl rounded-[2.4rem] border border-orange-100/80 bg-white/92 p-6 shadow-soft md:p-10 xl:p-12"
-            >
-              <div className="mx-auto max-w-4xl text-center">
-                <span className="eyebrow">GIỚI THIỆU SUNMIND</span>
-                <h2 className="section-heading mt-5 text-4xl font-extrabold md:text-5xl xl:text-6xl">
-                  Tầm nhìn, sứ mệnh và <span className="text-sunmind-primary">giá trị cốt lõi</span>
-                </h2>
-                <p className="mx-auto mt-5 text-base leading-relaxed text-sunmind-gray md:text-lg">
-                  SunMind phát triển như một hệ sinh thái nội dung thương mại điện tử với định hướng rõ ràng,
-                  cách vận hành kỷ luật và mục tiêu tăng trưởng bền vững cho creator, nền tảng và thương hiệu.
-                </p>
-              </div>
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activePage, collaborationTarget]);
 
-              <div className="mt-10 grid gap-5">
-                <article className="rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-sm md:p-9">
-                  <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Tầm nhìn</span>
-                  <p className="mt-4 text-base font-normal leading-relaxed text-sunmind-gray md:text-lg">
-                    Trở thành hệ sinh thái Creator Commerce có năng lực phát triển nhà sáng tạo, sản xuất nội dung và thúc đẩy tăng trưởng kinh doanh trên các nền tảng thương mại điện tử.
-                  </p>
-                </article>
-
-                <article className="rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-sm md:p-9">
-                  <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Sứ mệnh</span>
-                  <p className="mt-4 text-lg leading-relaxed text-sunmind-gray">
-                    Giúp creator phát triển bền vững thông qua định hướng nội dung, hệ thống hỗ trợ sản xuất,
-                    năng lực đọc dữ liệu và cơ hội thương mại phù hợp theo từng giai đoạn.
-                  </p>
-                </article>
-              </div>
-
-              <div className="mt-10 rounded-[1.8rem] border border-orange-100 bg-white p-6 shadow-sm md:p-8">
-                <div className="mx-auto max-w-3xl text-center">
-                  <span className="eyebrow">GIÁ TRỊ CỐT LÕI</span>
-                  <h3 className="mt-5 text-3xl font-extrabold md:text-5xl">
-                    Giá trị cốt lõi <span className="text-sunmind-primary">SunMind</span>
-                  </h3>
-                  <p className="mx-auto mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
-                    Nền tảng vận hành của SunMind tập trung vào hiệu quả, quy trình và khả năng đồng hành dài hạn với creator, nền tảng và thương hiệu.
-                  </p>
-                </div>
-
-                <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                  {coreValues.map((value, idx) => (
-                    <article
-                      key={value.title}
-                      className="rounded-[1.4rem] border border-orange-100 bg-white px-5 py-5 shadow-sm transition hover:shadow-md"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-orange-200 bg-orange-50 text-sm font-bold text-sunmind-primary">
-                          0{idx + 1}
-                        </div>
-                        <p className="text-lg font-bold text-sunmind-dark">{value.title}</p>
-                      </div>
-                      <p className="mt-4 text-sm leading-relaxed text-sunmind-gray">{value.desc}</p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <TrustBadges items={trustBadges} />
-        <WhyChoose items={valueItems} />
-        <Process steps={processSteps} />
-        <div id="ecosystem">
-          <Ecosystem nodes={ecosystemNodes} />
-        </div>
-        <CaseStudies items={caseStudies} />
-        <Leadership leaders={leadership} />
-        <div id="partners">
-          <Suspense fallback={<LazySectionFallback />}>
-            <Partners names={partnerNames} />
-          </Suspense>
-        </div>
-        <Achievements items={achievements} />
-        <div id="testimonials">
-          <Suspense fallback={<LazySectionFallback />}>
-            <Testimonials items={testimonials} />
-          </Suspense>
-        </div>
-        <div id="faq">
-          <FAQ items={faqs} />
-        </div>
-
-        <section className="section-wrap dark-grid relative overflow-hidden">
-          <div className="absolute left-1/2 top-0 h-36 w-[68%] -translate-x-1/2 rounded-full bg-orange-300/20 blur-3xl" />
-          <div className="container-main rounded-[2rem] border border-orange-400/20 bg-white/5 px-6 py-16 text-center backdrop-blur md:px-12">
-            <h2 className="text-4xl font-black text-white md:text-6xl">
-              Cùng SunMind xây dựng <span className="text-orange-300">tăng trưởng thương mại nội dung</span> bền vững
-            </h2>
-            <p className="mx-auto mt-6 max-w-3xl text-lg text-orange-100/90">
-              Từ nội dung, creator, livestream đến vận hành thương mại, SunMind đồng hành cùng thương hiệu
-              để biến tiềm năng thành kết quả có thể đo lường.
+  const renderHomePage = () => (
+    <>
+      <section className="section-wrap pb-10 pt-32 md:pt-36">
+        <div className="container-main grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
+          <div className="rounded-[2rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+            <p className="eyebrow">TRANG CHỦ</p>
+            <h1 className="mt-4 text-4xl font-black leading-tight text-sunmind-dark md:text-6xl">
+              Kết nối Creator - Tăng trưởng doanh thu - Lan tỏa thương hiệu
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-sunmind-gray md:text-lg">
+              SUNMIND MEDIA là đơn vị hoạt động trong lĩnh vực Affiliate Marketing, quản lý Creator, sản xuất nội dung và vận hành Livestream trên các nền tảng thương mại điện tử.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <MagneticButton href="#contact">Đặt lịch tư vấn</MagneticButton>
-              <MagneticButton href="#partners" light className="text-white">
-                Xem hệ sinh thái đối tác
+            <div className="mt-8 flex flex-wrap gap-4">
+              <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}>
+                Trở thành đối tác của SUNMIND
+              </MagneticButton>
+              <MagneticButton onClick={() => setActivePage("creator-network")} light className="border-orange-300 text-sunmind-primary">
+                Đăng ký trở thành Creator
               </MagneticButton>
             </div>
           </div>
+
+          <div className="rounded-[2rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+            <h2 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">4 câu hỏi người xem cần thấy ngay</h2>
+            <BulletList
+              items={[
+                "SUNMIND là ai?",
+                "SUNMIND cung cấp dịch vụ gì?",
+                "SUNMIND đã làm được gì?",
+                "Khách hàng nên liên hệ bằng cách nào?",
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-wrap py-0">
+        <div className="container-main grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {homeStats.map((stat) => (
+            <article key={stat} className="rounded-[1.4rem] border border-orange-100 bg-white px-5 py-5 shadow-sm">
+              <p className="text-base font-bold text-sunmind-dark md:text-lg">{stat}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-wrap">
+        <div className="container-main rounded-[2rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+          <h2 className="text-3xl font-black text-sunmind-dark md:text-5xl">Giới thiệu ngắn về SUNMIND</h2>
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+            <p>
+              SUNMIND MEDIA là đơn vị hoạt động trong lĩnh vực truyền thông, sản xuất nội dung số, Affiliate Marketing và vận hành Livestream Commerce. Chúng tôi tập trung xây dựng hệ sinh thái kết nối giữa Creator, thương hiệu và các nền tảng thương mại điện tử, nhằm tạo ra những chiến dịch nội dung có tính thực tiễn, minh bạch và mang lại hiệu quả kinh doanh rõ ràng.
+            </p>
+            <p>
+              Được thành lập từ năm 2025, SUNMIND lựa chọn phát triển từ năng lực vận hành thực tế, quy trình chuyên nghiệp và tư duy tối ưu dựa trên dữ liệu. Từ tuyển chọn và đồng hành cùng Creator, sản xuất nội dung, triển khai livestream đến theo dõi hiệu suất, chúng tôi hướng tới việc giúp mỗi đối tác khai thác đúng tiềm năng và phát triển bền vững trong hệ sinh thái thương mại nội dung.
+            </p>
+            <p>
+              Với tinh thần đổi mới, trách nhiệm và đồng hành dài hạn, SUNMIND MEDIA không chỉ kết nối nguồn lực mà còn cùng Creator và thương hiệu kiến tạo những giá trị tăng trưởng bền vững.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main">
+          <h2 className="text-center text-3xl font-black text-sunmind-dark md:text-5xl">Dịch vụ nổi bật</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-center text-base text-sunmind-gray md:text-lg">
+            SUNMIND triển khai theo 5 nhóm chính, tập trung vào quy trình rõ ràng và hiệu quả có thể đo lường.
+          </p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {homeServiceGroups.map((group) => (
+              <article key={group.title} className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+                <h3 className="text-2xl font-bold text-sunmind-dark">{group.title}</h3>
+                <BulletList items={group.items} />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+          <h3 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Quy trình vận hành</h3>
+          <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+            {"Tiếp nhận mục tiêu -> Phân tích sản phẩm -> Lựa chọn Creator -> Sản xuất nội dung -> Triển khai -> Theo dõi dữ liệu -> Tối ưu -> Báo cáo"}
+          </p>
+          <p className="mt-4 text-sm text-sunmind-gray">
+            SUNMIND tập trung chứng minh năng lực bằng quy trình rõ ràng, minh bạch và có thể theo dõi hiệu suất theo từng giai đoạn.
+          </p>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+          <h3 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Ngành hàng đã triển khai</h3>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {[
+              "Làm đẹp và chăm sóc cá nhân",
+              "Thời trang",
+              "Gia dụng",
+              "Mẹ và bé",
+              "Thực phẩm",
+              "Đời sống",
+              "Điện tử và phụ kiện",
+            ].map((item) => (
+              <span key={item} className="rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-semibold text-sunmind-primary">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-wrap dark-grid relative overflow-hidden">
+        <div className="absolute left-1/2 top-0 h-36 w-[70%] -translate-x-1/2 rounded-full bg-orange-300/20 blur-3xl" />
+        <div className="container-main rounded-[2rem] border border-orange-400/20 bg-white/5 px-6 py-14 text-center backdrop-blur md:px-12">
+          <h2 className="text-3xl font-black text-white md:text-5xl">Kêu gọi hợp tác</h2>
+          <p className="mx-auto mt-5 max-w-4xl text-base leading-relaxed text-orange-100/90 md:text-lg">
+            Bạn là Brand đang tìm kiếm Creator phù hợp? Bạn là Creator muốn phát triển doanh thu Affiliate? Hãy cùng SUNMIND xây dựng một mô hình hợp tác minh bạch và bền vững.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}>Dành cho Brand</MagneticButton>
+            <MagneticButton onClick={() => setActivePage("creator-network")} light className="text-white">Dành cho Creator</MagneticButton>
+            <MagneticButton onClick={() => setActivePage("contact")} light className="text-white">Liên hệ SUNMIND</MagneticButton>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+
+  const renderAboutPage = () => (
+    <>
+      <PageHeader
+        title="Về SUNMIND"
+        subtitle="Trang này trình bày sâu hơn về câu chuyện hình thành, tầm nhìn, sứ mệnh và các giá trị cốt lõi của SUNMIND."
+      />
+
+      <section className="section-wrap">
+        <div className="container-main rounded-[2rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+          <h2 className="text-3xl font-black text-sunmind-dark md:text-5xl">Câu chuyện về SUNMIND</h2>
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+            {aboutStory.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main grid gap-5 md:grid-cols-2">
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm md:p-8">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Tầm nhìn</h3>
+            <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+              Trở thành hệ sinh thái Creator Commerce uy tín, giúp Creator, Brand và các nền tảng thương mại điện tử cùng tăng trưởng bền vững.
+            </p>
+          </article>
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm md:p-8">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Sứ mệnh</h3>
+            <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+              Xây dựng môi trường hợp tác minh bạch, chuyên nghiệp; hỗ trợ Creator phát triển nội dung, nâng cao hiệu suất và tạo ra giá trị thực cho thương hiệu.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main">
+          <h3 className="text-center text-3xl font-black text-sunmind-dark md:text-5xl">Giá trị cốt lõi</h3>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {coreValues.map((value, idx) => (
+              <article key={value.title} className="rounded-[1.4rem] border border-orange-100 bg-white p-5 shadow-sm">
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-sunmind-primary">0{idx + 1}</p>
+                <h4 className="mt-2 text-xl font-extrabold text-sunmind-dark">{value.title}</h4>
+                <p className="mt-3 text-sm leading-relaxed text-sunmind-gray">{value.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+
+  const renderServicesPage = () => (
+    <>
+      <PageHeader
+        title="Dịch vụ"
+        subtitle="Giải pháp tăng trưởng toàn diện cho Creator và thương hiệu. Mỗi dịch vụ được triển khai theo mục tiêu cụ thể, quy trình rõ ràng và dữ liệu đo lường được."
+      />
+
+      <section className="section-wrap pt-8">
+        <div className="container-main flex flex-wrap gap-4">
+          <MagneticButton onClick={() => setActivePage("contact")}>Nhận tư vấn dịch vụ</MagneticButton>
+          <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }} light className="border-orange-300 text-sunmind-primary">
+            Gửi yêu cầu hợp tác
+          </MagneticButton>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {serviceOverview.map((item) => (
+            <article key={item} className="rounded-[1.4rem] border border-orange-100 bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-sunmind-primary">Nhóm dịch vụ</p>
+              <h3 className="mt-2 text-xl font-bold text-sunmind-dark">{item}</h3>
+              <p className="mt-2 text-sm text-sunmind-gray">Mô tả ngắn, mục tiêu rõ ràng, theo dõi hiệu suất định kỳ.</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main grid gap-5 xl:grid-cols-2">
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Affiliate Marketing</h3>
+            <BulletList
+              items={[
+                "Phân tích sản phẩm và khách hàng mục tiêu",
+                "Lựa chọn, kết nối Creator",
+                "Quản lý nội dung và tiến độ",
+                "Theo dõi đơn hàng, doanh thu và hiệu suất",
+                "Báo cáo, tối ưu chiến dịch",
+              ]}
+            />
+          </article>
+
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Creator Management</h3>
+            <BulletList
+              items={[
+                "Tuyển chọn và phân loại Creator",
+                "Định hướng nội dung",
+                "Kết nối sản phẩm và chiến dịch",
+                "Hỗ trợ Affiliate và Livestream",
+                "Theo dõi, cải thiện hiệu suất",
+              ]}
+            />
+          </article>
+
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Livestream Commerce</h3>
+            <BulletList
+              items={[
+                "Xây dựng kế hoạch và lịch livestream",
+                "Chuẩn bị kịch bản, sản phẩm và ưu đãi",
+                "Tuyển chọn, điều phối host",
+                "Setup và vận hành phiên live",
+                "Theo dõi GMV, đơn hàng và tỷ lệ chuyển đổi",
+              ]}
+            />
+          </article>
+
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Sản xuất nội dung</h3>
+            <BulletList
+              items={[
+                "Nghiên cứu insight và ý tưởng",
+                "Xây dựng kịch bản",
+                "Quay dựng video",
+                "Sản xuất nội dung review, Affiliate và quảng cáo",
+                "Kiểm duyệt và hoàn thiện nội dung",
+              ]}
+            />
+          </article>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+          <h3 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Quy trình hợp tác</h3>
+          <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+            {"Tiếp nhận yêu cầu -> Đề xuất giải pháp -> Triển khai -> Theo dõi và tối ưu -> Báo cáo kết quả"}
+          </p>
+        </div>
+      </section>
+
+      <section className="section-wrap dark-grid relative overflow-hidden">
+        <div className="absolute left-1/2 top-0 h-36 w-[70%] -translate-x-1/2 rounded-full bg-orange-300/20 blur-3xl" />
+        <div className="container-main rounded-[2rem] border border-orange-400/20 bg-white/5 px-6 py-14 text-center backdrop-blur md:px-12">
+          <h3 className="text-3xl font-black text-white md:text-5xl">Bắt đầu hợp tác cùng SUNMIND</h3>
+          <p className="mx-auto mt-5 max-w-4xl text-base leading-relaxed text-orange-100/90 md:text-lg">
+            Dù bạn là Creator đang muốn phát triển hoạt động Affiliate hay thương hiệu cần triển khai nội dung, KOC và Livestream, SUNMIND sẵn sàng đồng hành từ xây dựng kế hoạch đến vận hành và tối ưu hiệu quả.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <MagneticButton onClick={() => setActivePage("contact")}>Nhận tư vấn</MagneticButton>
+            <MagneticButton onClick={() => setActivePage("creator-network")} light className="text-white">Đăng ký Creator</MagneticButton>
+            <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }} light className="text-white">
+              Gửi yêu cầu hợp tác
+            </MagneticButton>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+
+  const renderCreatorNetworkPage = () => (
+    <>
+      <PageHeader
+        title="Creator Network"
+        subtitle="Kết nối đúng Creator - Tạo giá trị thực. SUNMIND xây dựng mạng lưới Creator dựa trên sự phù hợp giữa nội dung, tệp người xem, ngành hàng và khả năng tạo hiệu quả thương mại."
+      />
+
+      <section className="section-wrap">
+        <div className="container-main grid gap-5 xl:grid-cols-2">
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Các nhóm Creator</h3>
+            <BulletList items={creatorGroups} />
+            <p className="mt-4 text-sm text-sunmind-gray">
+              Các lĩnh vực chính gồm làm đẹp, thời trang, gia dụng, mẹ và bé, ẩm thực, công nghệ và đời sống.
+            </p>
+          </article>
+
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Tiêu chí lựa chọn</h3>
+            <BulletList items={creatorCriteria} />
+            <p className="mt-4 text-sm font-semibold text-sunmind-primary">Số lượng người theo dõi không phải là tiêu chí duy nhất.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-wrap pt-0">
+        <div className="container-main grid gap-5 md:grid-cols-2">
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Dành cho thương hiệu</h3>
+            <BulletList
+              items={[
+                "Lựa chọn Creator phù hợp",
+                "Kết nối và quản lý hợp tác",
+                "Định hướng, kiểm duyệt nội dung",
+                "Theo dõi tiến độ và hiệu suất",
+                "Tổng hợp báo cáo chiến dịch",
+              ]}
+            />
+            <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }} className="mt-6">
+              Tìm Creator cho chiến dịch
+            </MagneticButton>
+          </article>
+
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Dành cho Creator</h3>
+            <BulletList
+              items={[
+                "Tiếp cận sản phẩm và chiến dịch phù hợp",
+                "Kết nối với thương hiệu",
+                "Hỗ trợ định hướng nội dung",
+                "Tham gia Affiliate và Livestream",
+                "Theo dõi, cải thiện hiệu suất",
+                "Phát triển cơ hội hợp tác lâu dài",
+              ]}
+            />
+            <MagneticButton onClick={() => setActivePage("contact")} className="mt-6">Đăng ký trở thành Creator</MagneticButton>
+          </article>
+        </div>
+      </section>
+    </>
+  );
+
+  const renderCollaborationBody = () => {
+    if (collaborationTarget === "creator") {
+      return (
+        <div className="grid gap-5 md:grid-cols-2">
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Dành cho Creator</h3>
+            <BulletList
+              items={[
+                "Đăng ký để nhận chiến dịch phù hợp ngành hàng",
+                "Nhận hỗ trợ định hướng nội dung và lịch triển khai",
+                "Kết nối cơ hội Affiliate, Livestream và Brand Campaign",
+                "Theo dõi hiệu suất để cải thiện tăng trưởng dài hạn",
+              ]}
+            />
+          </article>
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Mục tiêu hợp tác</h3>
+            <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+              SUNMIND đồng hành cùng Creator theo mô hình minh bạch, có lộ trình và tập trung kết quả thực để phát triển bền vững.
+            </p>
+            <MagneticButton onClick={() => setActivePage("contact")} className="mt-6">Đăng ký Creator</MagneticButton>
+          </article>
+        </div>
+      );
+    }
+
+    if (collaborationTarget === "platform") {
+      return (
+        <div className="grid gap-5 md:grid-cols-2">
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Dành cho nền tảng</h3>
+            <BulletList
+              items={[
+                "Hợp tác phát triển mạng lưới Creator chất lượng",
+                "Chuẩn hóa quy trình nội dung và livestream theo chính sách",
+                "Tối ưu hiệu suất chiến dịch theo dữ liệu",
+                "Đồng triển khai các chương trình tăng trưởng dài hạn",
+              ]}
+            />
+          </article>
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Mục tiêu hợp tác</h3>
+            <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
+              SUNMIND xây dựng năng lực vận hành để phối hợp cùng nền tảng một cách minh bạch, ổn định và có trách nhiệm.
+            </p>
+            <MagneticButton onClick={() => setActivePage("contact")} className="mt-6">Gửi yêu cầu hợp tác</MagneticButton>
+          </article>
+        </div>
+      );
+    }
+
+    return (
+      <>
+        <div className="grid gap-5 xl:grid-cols-3">
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Những vấn đề Brand thường gặp</h3>
+            <BulletList
+              items={[
+                "Khó tìm Creator phù hợp",
+                "Nội dung không đồng đều",
+                "Khó kiểm soát tiến độ",
+                "Creator có view nhưng không tạo ra doanh thu",
+                "Không có hệ thống theo dõi hiệu suất",
+                "Livestream thiếu quy trình",
+              ]}
+            />
+          </article>
+
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">SUNMIND giải quyết như thế nào</h3>
+            <BulletList
+              items={[
+                "Tuyển chọn Creator theo dữ liệu",
+                "Matching sản phẩm và Creator",
+                "Kiểm duyệt nội dung",
+                "Theo dõi chỉ số",
+                "Điều chỉnh chiến dịch",
+                "Báo cáo minh bạch",
+              ]}
+            />
+          </article>
+
+          <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Các mô hình hợp tác</h3>
+            <BulletList
+              items={[
+                "Booking Creator theo chiến dịch",
+                "Affiliate Performance",
+                "Livestream trọn gói",
+                "Sản xuất nội dung",
+                "Quản lý Creator dài hạn",
+                "Hợp tác vận hành theo tháng",
+              ]}
+            />
+          </article>
+        </div>
+
+        <section className="section-wrap px-0 pb-0 pt-7">
+          <div className="container-main rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Form nhận yêu cầu</h3>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {[
+                "Tên doanh nghiệp",
+                "Người liên hệ",
+                "Số điện thoại/email",
+                "Ngành hàng",
+                "Sản phẩm",
+                "Mục tiêu chiến dịch",
+                "Ngân sách dự kiến",
+                "Thời gian triển khai",
+              ].map((field) => (
+                <label key={field} className="text-sm font-semibold text-sunmind-dark">
+                  {field}
+                  <input
+                    type="text"
+                    placeholder={field}
+                    className="mt-2 w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-sm text-sunmind-dark outline-none transition focus:border-sunmind-primary"
+                  />
+                </label>
+              ))}
+            </div>
+            <div className="mt-6">
+              <MagneticButton onClick={() => setActivePage("contact")}>Gửi yêu cầu hợp tác</MagneticButton>
+            </div>
+          </div>
         </section>
-      </main>
-      <div id="contact">
-        <Footer />
-      </div>
+      </>
+    );
+  };
+
+  const renderCollaborationPage = () => (
+    <>
+      <PageHeader title="Hợp tác" subtitle="Trong mục Hợp tác gồm: Dành cho Brand, Dành cho Creator, Dành cho nền tảng." />
+
+      <section className="section-wrap pt-8">
+        <div className="container-main flex flex-wrap gap-3">
+          {collaborationTabs.map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => setCollaborationTarget(tab.key)}
+              className={`rounded-full border px-5 py-2 text-sm font-semibold transition ${
+                collaborationTarget === tab.key
+                  ? "border-sunmind-primary bg-sunmind-primary text-white"
+                  : "border-orange-200 bg-white text-sunmind-dark hover:border-orange-300"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-wrap pt-6">
+        <div className="container-main">{renderCollaborationBody()}</div>
+      </section>
+    </>
+  );
+
+  const renderContactPage = () => (
+    <>
+      <PageHeader title="Liên hệ" subtitle="Kết nối trực tiếp với SUNMIND để nhận tư vấn hợp tác phù hợp mục tiêu." />
+
+      <section className="section-wrap">
+        <div className="container-main grid gap-5 xl:grid-cols-[1fr_1.1fr]">
+          <article className="rounded-[1.8rem] border border-orange-100 bg-white p-6 shadow-soft md:p-8">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Thông tin công ty</h3>
+            <BulletList
+              items={[
+                "Tên công ty: SUNMIND MEDIA",
+                "Địa chỉ: Ngọc Kim, Tân Yên, Bắc Ninh",
+                "Website: sunmindmedia.vn",
+                "Email: contact@sunmindmedia.com",
+                "Số điện thoại: 0966 878 344",
+                "Mã số doanh nghiệp: cập nhật khi công khai",
+                "Thời gian làm việc: Thứ 2 - Thứ 7, 08:30 - 18:00",
+              ]}
+            />
+            <div className="mt-5 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-sm text-sunmind-gray">
+              Kênh mạng xã hội: Facebook | TikTok | Zalo
+            </div>
+            <div className="mt-4 rounded-xl border border-orange-200 bg-white px-4 py-6 text-center text-sm text-sunmind-gray">
+              Bản đồ: có thể nhúng Google Maps tại khu vực thông tin liên hệ chính thức.
+            </div>
+          </article>
+
+          <article className="rounded-[1.8rem] border border-orange-100 bg-white p-6 shadow-soft md:p-8">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Form liên hệ</h3>
+            <p className="mt-3 text-sm text-sunmind-gray">
+              Chọn mục đích liên hệ: Hợp tác dành cho Brand, Đăng ký Creator, Hợp tác nền tảng, Tuyển dụng, Hỗ trợ chung.
+            </p>
+            <div className="mt-5 grid gap-4">
+              <input type="text" placeholder="Họ và tên" className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" />
+              <input type="text" placeholder="Số điện thoại" className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" />
+              <input type="email" placeholder="Email" className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" />
+              <select className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" defaultValue="">
+                <option value="" disabled>Chọn mục đích liên hệ</option>
+                <option>Hợp tác dành cho Brand</option>
+                <option>Đăng ký Creator</option>
+                <option>Hợp tác nền tảng</option>
+                <option>Tuyển dụng</option>
+                <option>Hỗ trợ chung</option>
+              </select>
+              <textarea rows={4} placeholder="Nội dung liên hệ" className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" />
+            </div>
+            <MagneticButton className="mt-6">Gửi liên hệ</MagneticButton>
+          </article>
+        </div>
+      </section>
+    </>
+  );
+
+  const renderPage = () => {
+    if (activePage === "home") return renderHomePage();
+    if (activePage === "about") return renderAboutPage();
+    if (activePage === "services") return renderServicesPage();
+    if (activePage === "creator-network") return renderCreatorNetworkPage();
+    if (activePage === "collaboration") return renderCollaborationPage();
+    return renderContactPage();
+  };
+
+  return (
+    <div className="bg-sunmind-bg text-sunmind-dark">
+      <Navbar activePage={activePage} onNavigate={setActivePage} />
+      <main>{renderPage()}</main>
+      <Footer onNavigate={setActivePage} />
     </div>
   );
 }
