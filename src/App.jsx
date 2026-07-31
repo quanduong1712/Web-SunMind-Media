@@ -199,6 +199,34 @@ const operationFlow = [
   },
 ];
 
+const serviceFlowSteps = [
+  {
+    step: "01",
+    title: "Tiếp nhận yêu cầu",
+    desc: "Ghi nhận mục tiêu, ngành hàng và phạm vi triển khai.",
+  },
+  {
+    step: "02",
+    title: "Đề xuất giải pháp",
+    desc: "Xây dựng phương án phù hợp ngân sách và KPI.",
+  },
+  {
+    step: "03",
+    title: "Triển khai",
+    desc: "Thực thi nội dung, Creator và lịch vận hành theo kế hoạch.",
+  },
+  {
+    step: "04",
+    title: "Theo dõi và tối ưu",
+    desc: "Theo dõi dữ liệu theo chu kỳ và điều chỉnh điểm nghẽn.",
+  },
+  {
+    step: "05",
+    title: "Báo cáo kết quả",
+    desc: "Tổng hợp chỉ số, hiệu quả và đề xuất giai đoạn tiếp theo.",
+  },
+];
+
 function PageHeader({ title, subtitle }) {
   return (
     <section className="section-wrap pb-0 pt-24 md:pt-28">
@@ -616,10 +644,24 @@ export default function App() {
 
       <section className="section-wrap pt-0">
         <div className="container-main rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-soft md:p-10">
-          <h3 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Quy trình hợp tác</h3>
-          <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
-            {"Tiếp nhận yêu cầu -> Đề xuất giải pháp -> Triển khai -> Theo dõi và tối ưu -> Báo cáo kết quả"}
-          </p>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h3 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Quy trình hợp tác</h3>
+            <p className="max-w-xl text-sm leading-relaxed text-sunmind-gray md:text-base">
+              Luồng triển khai được chuẩn hóa thành 5 bước để đảm bảo rõ tiến độ, rõ trách nhiệm và rõ kết quả.
+            </p>
+          </div>
+
+          <div className="enterprise-divider my-6" />
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {serviceFlowSteps.map((item) => (
+              <article key={item.step} className="rounded-[1.1rem] border border-orange-100 bg-white p-4 shadow-sm">
+                <p className="text-xs font-bold tracking-[0.16em] text-sunmind-primary">BƯỚC {item.step}</p>
+                <h4 className="mt-2 text-base font-extrabold text-sunmind-dark">{item.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-sunmind-gray">{item.desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
