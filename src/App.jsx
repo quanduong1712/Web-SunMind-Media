@@ -97,9 +97,9 @@ export default function App() {
               <div className="mt-10 grid gap-5">
                 <article className="rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-sm md:p-9">
                   <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Tầm nhìn</span>
-                  <h3 className="mt-4 text-3xl font-extrabold leading-tight md:text-[2.3rem]">
+                  <p className="mt-4 text-base font-normal leading-relaxed text-sunmind-gray md:text-lg">
                     Trở thành hệ sinh thái Creator Commerce có năng lực phát triển nhà sáng tạo, sản xuất nội dung và thúc đẩy tăng trưởng kinh doanh trên các nền tảng thương mại điện tử.
-                  </h3>
+                  </p>
                 </article>
 
                 <article className="rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-sm md:p-9">
