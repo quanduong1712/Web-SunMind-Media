@@ -58,7 +58,7 @@ p {
 }
 
 .section-wrap {
-  @apply relative py-16 md:py-24;
+  @apply relative py-12 md:py-16;
 }
 
 .container-main {

@@ -16,7 +16,7 @@ export const navItems = [
   "Trang chủ",
   "Về SUNMIND",
   "Dịch vụ",
-  "Creator Network",
+  "Mạng lưới Creator",
   "Hợp tác",
   "Liên hệ",
 ];
@@ -144,7 +144,7 @@ export const trustBadges = [
     desc: "SunMind phát triển hệ sinh thái creator theo quy trình rõ ràng và định hướng tăng trưởng bền vững.",
   },
   {
-    title: "Vận hành end-to-end có chuẩn hóa",
+    title: "Vận hành xuyên suốt có chuẩn hóa",
     desc: "Từ tuyển chọn creator, sản xuất nội dung, kích hoạt thương mại đến tối ưu hiệu suất theo dữ liệu.",
   },
   {

@@ -15,7 +15,7 @@ const homeStats = [
 
 const homeServiceGroups = [
   {
-    title: "Creator Management",
+    title: "Quản lý Creator",
     items: [
       "Tuyển chọn Creator",
       "Đào tạo và định hướng nội dung",
@@ -25,7 +25,7 @@ const homeServiceGroups = [
     ],
   },
   {
-    title: "Affiliate Marketing",
+    title: "Tiếp thị Affiliate",
     items: [
       "Xây dựng mạng lưới Affiliate Creator",
       "Phân phối sản phẩm phù hợp",
@@ -35,7 +35,7 @@ const homeServiceGroups = [
     ],
   },
   {
-    title: "Livestream Commerce",
+    title: "Vận hành Livestream Commerce",
     items: [
       "Xây dựng kịch bản livestream",
       "Tuyển chọn và đào tạo host",
@@ -45,7 +45,7 @@ const homeServiceGroups = [
     ],
   },
   {
-    title: "Content Production",
+    title: "Sản xuất nội dung",
     items: [
       "Nghiên cứu insight",
       "Lên ý tưởng và kịch bản",
@@ -55,9 +55,9 @@ const homeServiceGroups = [
     ],
   },
   {
-    title: "Brand Campaign",
+    title: "Chiến dịch thương hiệu",
     items: [
-      "Kết nối Brand với Creator",
+      "Kết nối thương hiệu với Creator",
       "Triển khai chiến dịch KOC",
       "Seeding và review sản phẩm",
       "Quản lý tiến độ, nội dung và báo cáo",
@@ -71,7 +71,7 @@ const aboutStory = [
   "Chúng tôi xây dựng năng lực vận hành từ thực tế triển khai Affiliate, sản xuất nội dung và livestream commerce trên các nền tảng thương mại điện tử.",
   "SUNMIND tập trung vào 3 lớp giá trị: chuẩn hóa quy trình, nâng chất lượng nội dung và tối ưu hiệu suất theo dữ liệu đo lường.",
   "Với Creator, chúng tôi đồng hành theo lộ trình phát triển dài hạn. Với thương hiệu, chúng tôi thiết kế giải pháp phù hợp mục tiêu doanh thu và năng lực vận hành nội bộ.",
-  "Mục tiêu xuyên suốt của SUNMIND là xây dựng hệ sinh thái hợp tác minh bạch, hiệu quả và bền vững cho Creator, Brand và nền tảng.",
+  "Mục tiêu xuyên suốt của SUNMIND là xây dựng hệ sinh thái hợp tác minh bạch, hiệu quả và bền vững cho Creator, thương hiệu và nền tảng.",
 ];
 
 const coreValues = [
@@ -103,18 +103,18 @@ const coreValues = [
 
 const serviceOverview = [
   "Quản lý và phát triển Creator",
-  "Affiliate Marketing",
+  "Tiếp thị Affiliate",
   "Livestream Commerce",
   "Sản xuất nội dung",
   "Chiến dịch dành cho thương hiệu",
 ];
 
 const creatorGroups = [
-  "Content Creator",
-  "Affiliate Creator",
-  "KOC/Review Creator",
+  "Creator nội dung",
+  "Creator Affiliate",
+  "Creator KOC/Review",
   "Livestream Host",
-  "Performance Creator",
+  "Creator hiệu suất",
 ];
 
 const creatorCriteria = [
@@ -127,38 +127,38 @@ const creatorCriteria = [
 ];
 
 const collaborationTabs = [
-  { key: "brand", label: "Dành cho Brand" },
+  { key: "brand", label: "Dành cho Thương hiệu" },
   { key: "creator", label: "Dành cho Creator" },
   { key: "platform", label: "Dành cho nền tảng" },
 ];
 
 const heroPillars = [
   {
-    title: "Performance Blueprint",
+    title: "Lộ trình hiệu suất",
     desc: "Thiết kế lộ trình tăng trưởng theo mục tiêu doanh thu và ngân sách thực tế.",
     icon: TrendingUp,
   },
   {
-    title: "Creator-Market Fit",
-    desc: "Matching Creator với ngành hàng và hành vi mua sắm để tăng tỷ lệ chuyển đổi.",
+    title: "Độ khớp Creator - thị trường",
+    desc: "Kết nối Creator với ngành hàng và hành vi mua sắm để tăng tỷ lệ chuyển đổi.",
     icon: Zap,
   },
   {
-    title: "Full-Funnel Visibility",
-    desc: "Theo dõi minh bạch từ content đến GMV, tối ưu theo chu kỳ triển khai.",
+    title: "Theo dõi toàn phễu",
+    desc: "Theo dõi minh bạch từ nội dung đến GMV, tối ưu theo chu kỳ triển khai.",
     icon: ShieldCheck,
   },
 ];
 
 const heroTrustSignals = [
   "Chiến lược theo KPI",
-  "Vận hành end-to-end",
+  "Vận hành xuyên suốt",
   "Báo cáo minh bạch",
 ];
 
 function PageHeader({ title, subtitle }) {
   return (
-    <section className="section-wrap pb-0 pt-28 md:pt-32">
+    <section className="section-wrap pb-0 pt-24 md:pt-28">
       <div className="container-main">
         <div className="rounded-[1.8rem] border border-orange-100 bg-white px-6 py-7 shadow-soft md:px-10">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-sunmind-primary">SunMind Media</p>
@@ -192,7 +192,7 @@ export default function App() {
       home: "Trang chủ",
       about: "Về SUNMIND",
       services: "Dịch vụ",
-      "creator-network": "Creator Network",
+      "creator-network": "Mạng lưới Creator",
       collaboration: "Hợp tác",
       contact: "Liên hệ",
     }),
@@ -205,15 +205,15 @@ export default function App() {
 
   const renderHomePage = () => (
     <>
-      <section className="section-wrap relative overflow-hidden pb-10 pt-32 md:pt-36">
+      <section className="section-wrap relative overflow-hidden pb-8 pt-28 md:pt-32">
         <div className="pointer-events-none absolute -left-16 top-24 h-72 w-72 rounded-full bg-orange-200/35 blur-3xl" />
         <div className="pointer-events-none absolute -right-16 top-8 h-72 w-72 rounded-full bg-amber-200/25 blur-3xl" />
-        <div className="container-main grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[2rem] border border-orange-100 bg-white p-7 shadow-[0_28px_80px_rgba(28,20,5,0.08)] md:p-10">
+        <div className="container-main grid gap-6 xl:grid-cols-[1.1fr_0.9fr] xl:items-stretch">
+          <div className="h-full rounded-[2rem] border border-orange-100 bg-white p-7 shadow-[0_28px_80px_rgba(28,20,5,0.08)] md:p-9">
             <div className="flex flex-wrap items-center gap-3">
               <p className="eyebrow">SUNMIND MEDIA</p>
               <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-sunmind-primary">
-                <BadgeCheck size={13} /> Premium Growth Partner
+                <BadgeCheck size={13} /> Đối tác tăng trưởng
               </span>
             </div>
             <h1 className="mt-4 text-4xl font-black leading-tight text-sunmind-dark md:text-6xl">
@@ -241,10 +241,18 @@ export default function App() {
                 </span>
               ))}
             </div>
+
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              {homeStats.slice(0, 4).map((stat) => (
+                <div key={stat} className="rounded-xl border border-orange-100 bg-orange-50/45 px-4 py-3 text-sm font-semibold text-sunmind-dark">
+                  {stat}
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="rounded-[2rem] border border-orange-100 bg-gradient-to-b from-white to-orange-50/50 p-7 shadow-[0_24px_60px_rgba(35,20,0,0.08)] md:p-10">
-            <h2 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Growth Blueprint</h2>
+          <div className="flex h-full flex-col rounded-[2rem] border border-orange-100 bg-gradient-to-b from-white to-orange-50/50 p-7 shadow-[0_24px_60px_rgba(35,20,0,0.08)] md:p-9">
+            <h2 className="text-2xl font-extrabold text-sunmind-dark md:text-3xl">Bản đồ tăng trưởng</h2>
             <p className="mt-3 text-sm leading-relaxed text-sunmind-gray md:text-base">
               Mỗi chiến dịch được vận hành như một mô hình tăng trưởng đầy đủ: từ insight đến doanh thu.
             </p>
@@ -266,9 +274,9 @@ export default function App() {
                 );
               })}
             </div>
-            <div className="mt-6 rounded-xl border border-orange-200/80 bg-white px-4 py-4">
+            <div className="mt-auto rounded-xl border border-orange-200/80 bg-white px-4 py-4">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sunmind-primary">Tăng tốc chuyển đổi</p>
-              <p className="mt-2 text-sm text-sunmind-gray">Xem cách SunMind thiết kế mô hình hợp tác cho Brand trong 3 bước triển khai đầu tiên.</p>
+              <p className="mt-2 text-sm text-sunmind-gray">Xem cách SunMind thiết kế mô hình hợp tác cho thương hiệu trong 3 bước triển khai đầu tiên.</p>
               <button
                 type="button"
                 onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}
@@ -283,7 +291,7 @@ export default function App() {
 
       <section className="section-wrap py-0">
         <div className="container-main grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {homeStats.map((stat) => (
+          {homeStats.slice(4).map((stat) => (
             <article key={stat} className="relative overflow-hidden rounded-[1.4rem] border border-orange-100 bg-white px-5 py-5 shadow-sm">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-transparent" />
               <p className="text-base font-bold text-sunmind-dark md:text-lg">{stat}</p>
@@ -379,7 +387,7 @@ export default function App() {
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}>
-              <span className="inline-flex items-center gap-2">Nhận plan cho Brand <ArrowRight size={16} /></span>
+              <span className="inline-flex items-center gap-2">Nhận kế hoạch cho Thương hiệu <ArrowRight size={16} /></span>
             </MagneticButton>
             <MagneticButton onClick={() => setActivePage("creator-network")} light className="text-white">Dành cho Creator</MagneticButton>
             <MagneticButton onClick={() => setActivePage("contact")} light className="text-white">Liên hệ SUNMIND</MagneticButton>
@@ -412,7 +420,7 @@ export default function App() {
           <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm md:p-8">
             <h3 className="text-2xl font-extrabold text-sunmind-dark">Tầm nhìn</h3>
             <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
-              Trở thành hệ sinh thái Creator Commerce uy tín, giúp Creator, Brand và các nền tảng thương mại điện tử cùng tăng trưởng bền vững.
+              Trở thành hệ sinh thái Creator Commerce uy tín, giúp Creator, thương hiệu và các nền tảng thương mại điện tử cùng tăng trưởng bền vững.
             </p>
           </article>
           <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm md:p-8">
@@ -556,7 +564,7 @@ export default function App() {
   const renderCreatorNetworkPage = () => (
     <>
       <PageHeader
-        title="Creator Network"
+        title="Mạng lưới Creator"
         subtitle="Mạng lưới Creator được tuyển chọn theo độ phù hợp ngành hàng, chất lượng nội dung và năng lực tạo hiệu quả thương mại."
       />
 
@@ -625,7 +633,8 @@ export default function App() {
               items={[
                 "Đăng ký để nhận chiến dịch phù hợp ngành hàng",
                 "Nhận hỗ trợ định hướng nội dung và lịch triển khai",
-                "Kết nối cơ hội Affiliate, Livestream và Brand Campaign",
+                "Kết nối cơ hội Affiliate, Livestream và chiến dịch thương hiệu",
+                "Kết nối cơ hội Affiliate, Livestream và chiến dịch thương hiệu",
                 "Theo dõi hiệu suất để cải thiện tăng trưởng dài hạn",
               ]}
             />
@@ -670,7 +679,7 @@ export default function App() {
       <>
         <div className="grid gap-5 xl:grid-cols-3">
           <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm">
-            <h3 className="text-2xl font-extrabold text-sunmind-dark">Những vấn đề Brand thường gặp</h3>
+            <h3 className="text-2xl font-extrabold text-sunmind-dark">Những vấn đề thương hiệu thường gặp</h3>
             <BulletList
               items={[
                 "Khó tìm Creator phù hợp",
@@ -688,7 +697,7 @@ export default function App() {
             <BulletList
               items={[
                 "Tuyển chọn Creator theo dữ liệu",
-                "Matching sản phẩm và Creator",
+                "Ghép sản phẩm với Creator phù hợp",
                 "Kiểm duyệt nội dung",
                 "Theo dõi chỉ số",
                 "Điều chỉnh chiến dịch",
@@ -805,7 +814,7 @@ export default function App() {
           <article className="rounded-[1.8rem] border border-orange-100 bg-white p-6 shadow-soft md:p-8">
             <h3 className="text-2xl font-extrabold text-sunmind-dark">Form liên hệ</h3>
             <p className="mt-3 text-sm text-sunmind-gray">
-              Chọn mục đích liên hệ: Hợp tác dành cho Brand, Đăng ký Creator, Hợp tác nền tảng, Tuyển dụng, Hỗ trợ chung.
+              Chọn mục đích liên hệ: Hợp tác dành cho Thương hiệu, Đăng ký Creator, Hợp tác nền tảng, Tuyển dụng, Hỗ trợ chung.
             </p>
             <div className="mt-5 grid gap-4">
               <input type="text" placeholder="Họ và tên" className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" />
@@ -813,7 +822,7 @@ export default function App() {
               <input type="email" placeholder="Email" className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" />
               <select className="w-full rounded-xl border border-orange-200 px-4 py-3 text-sm outline-none focus:border-sunmind-primary" defaultValue="">
                 <option value="" disabled>Chọn mục đích liên hệ</option>
-                <option>Hợp tác dành cho Brand</option>
+                <option>Hợp tác dành cho Thương hiệu</option>
                 <option>Đăng ký Creator</option>
                 <option>Hợp tác nền tảng</option>
                 <option>Tuyển dụng</option>

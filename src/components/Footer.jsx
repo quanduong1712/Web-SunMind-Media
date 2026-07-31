@@ -9,13 +9,13 @@ export default function Footer({ onNavigate = () => {} }) {
         { label: "Trang chủ", page: "home" },
         { label: "Về SUNMIND", page: "about" },
         { label: "Dịch vụ", page: "services" },
-        { label: "Creator Network", page: "creator-network" },
+        { label: "Mạng lưới Creator", page: "creator-network" },
       ],
     },
     {
       title: "Hợp tác",
       items: [
-        { label: "Dành cho Brand", page: "collaboration" },
+        { label: "Dành cho Thương hiệu", page: "collaboration" },
         { label: "Dành cho Creator", page: "creator-network" },
         { label: "Dành cho nền tảng", page: "collaboration" },
       ],

@@ -12,7 +12,7 @@ export default function Navbar({ activePage = "home", onNavigate = () => {} }) {
     "Trang chủ": "home",
     "Về SUNMIND": "about",
     "Dịch vụ": "services",
-    "Creator Network": "creator-network",
+    "Mạng lưới Creator": "creator-network",
     "Hợp tác": "collaboration",
     "Liên hệ": "contact",
   };
