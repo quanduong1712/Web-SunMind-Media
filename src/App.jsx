@@ -66,11 +66,11 @@ const homeServiceGroups = [
 ];
 
 const aboutStory = [
-  "SUNMIND MEDIA được hình thành từ một câu hỏi rất thực tế: làm thế nào để Creator, thương hiệu và nền tảng thương mại điện tử có thể kết nối với nhau hiệu quả hơn, minh bạch hơn và cùng tạo ra giá trị lâu dài?",
-  "Trong quá trình trực tiếp tham gia lĩnh vực Affiliate Marketing, sản xuất nội dung và vận hành bán hàng trên các nền tảng thương mại điện tử, chúng tôi nhận ra rằng thị trường không thiếu Creator, không thiếu sản phẩm và cũng không thiếu cơ hội. Điều còn thiếu là một hệ thống đủ rõ ràng để kết nối đúng người, đúng sản phẩm và đúng cách triển khai.",
-  "Nhiều Creator có khả năng sáng tạo nhưng chưa có định hướng phát triển, thiếu dữ liệu để tối ưu nội dung và chưa tiếp cận được những cơ hội hợp tác phù hợp. Trong khi đó, nhiều thương hiệu mong muốn triển khai Affiliate, KOC và Livestream nhưng gặp khó khăn trong việc lựa chọn Creator, kiểm soát chất lượng nội dung và đánh giá hiệu quả chiến dịch.",
-  "Từ những bài toán thực tế đó, SUNMIND MEDIA được thành lập vào năm 2025 với định hướng xây dựng một hệ sinh thái Creator Commerce chuyên nghiệp, nơi Creator được hỗ trợ để phát triển đúng năng lực, thương hiệu có thể triển khai chiến dịch minh bạch và các nền tảng nhận được giá trị tăng trưởng bền vững.",
-  "Đó cũng là cách SUNMIND từng bước hiện thực hóa sứ mệnh của mình: kết nối giá trị, lan tỏa thương hiệu và kiến tạo tương lai cho hệ sinh thái thương mại nội dung.",
+  "SUNMIND MEDIA bắt đầu từ một nhu cầu rất rõ của thị trường: kết nối đúng Creator với đúng thương hiệu để tạo ra tăng trưởng thật, thay vì chạy theo chỉ số bề nổi.",
+  "Chúng tôi xây dựng năng lực vận hành từ thực tế triển khai Affiliate, sản xuất nội dung và livestream commerce trên các nền tảng thương mại điện tử.",
+  "SUNMIND tập trung vào 3 lớp giá trị: chuẩn hóa quy trình, nâng chất lượng nội dung và tối ưu hiệu suất theo dữ liệu đo lường.",
+  "Với Creator, chúng tôi đồng hành theo lộ trình phát triển dài hạn. Với thương hiệu, chúng tôi thiết kế giải pháp phù hợp mục tiêu doanh thu và năng lực vận hành nội bộ.",
+  "Mục tiêu xuyên suốt của SUNMIND là xây dựng hệ sinh thái hợp tác minh bạch, hiệu quả và bền vững cho Creator, Brand và nền tảng.",
 ];
 
 const coreValues = [
@@ -188,7 +188,7 @@ export default function App() {
               Kết nối Creator - Tăng trưởng doanh thu - Lan tỏa thương hiệu
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-sunmind-gray md:text-lg">
-              SUNMIND MEDIA là đơn vị hoạt động trong lĩnh vực Affiliate Marketing, quản lý Creator, sản xuất nội dung và vận hành Livestream trên các nền tảng thương mại điện tử.
+              SUNMIND MEDIA cung cấp giải pháp phát triển Creator, Affiliate Marketing, sản xuất nội dung và vận hành Livestream Commerce cho thương hiệu trên các nền tảng thương mại điện tử.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <MagneticButton onClick={() => { setActivePage("collaboration"); setCollaborationTarget("brand"); }}>
@@ -229,13 +229,13 @@ export default function App() {
           <h2 className="text-3xl font-black text-sunmind-dark md:text-5xl">Giới thiệu ngắn về SUNMIND</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
             <p>
-              SUNMIND MEDIA là đơn vị hoạt động trong lĩnh vực truyền thông, sản xuất nội dung số, Affiliate Marketing và vận hành Livestream Commerce. Chúng tôi tập trung xây dựng hệ sinh thái kết nối giữa Creator, thương hiệu và các nền tảng thương mại điện tử, nhằm tạo ra những chiến dịch nội dung có tính thực tiễn, minh bạch và mang lại hiệu quả kinh doanh rõ ràng.
+              SUNMIND MEDIA là đơn vị truyền thông và thương mại nội dung tập trung vào hệ sinh thái Creator Commerce. Chúng tôi kết nối Creator, thương hiệu và nền tảng bằng cách làm việc theo quy trình rõ ràng và mục tiêu đo lường cụ thể.
             </p>
             <p>
-              Được thành lập từ năm 2025, SUNMIND lựa chọn phát triển từ năng lực vận hành thực tế, quy trình chuyên nghiệp và tư duy tối ưu dựa trên dữ liệu. Từ tuyển chọn và đồng hành cùng Creator, sản xuất nội dung, triển khai livestream đến theo dõi hiệu suất, chúng tôi hướng tới việc giúp mỗi đối tác khai thác đúng tiềm năng và phát triển bền vững trong hệ sinh thái thương mại nội dung.
+              Từ tuyển chọn Creator, xây dựng nội dung, triển khai livestream đến tối ưu chuyển đổi, mọi hoạt động đều được vận hành dựa trên dữ liệu và phản hồi thực tế từ thị trường.
             </p>
             <p>
-              Với tinh thần đổi mới, trách nhiệm và đồng hành dài hạn, SUNMIND MEDIA không chỉ kết nối nguồn lực mà còn cùng Creator và thương hiệu kiến tạo những giá trị tăng trưởng bền vững.
+              SUNMIND ưu tiên giá trị dài hạn: nội dung đúng tệp, vận hành đúng nhịp, và tăng trưởng đủ bền để có thể mở rộng theo từng giai đoạn.
             </p>
           </div>
         </div>
@@ -312,7 +312,7 @@ export default function App() {
     <>
       <PageHeader
         title="Về SUNMIND"
-        subtitle="Trang này trình bày sâu hơn về câu chuyện hình thành, tầm nhìn, sứ mệnh và các giá trị cốt lõi của SUNMIND."
+        subtitle="Hành trình xây dựng hệ sinh thái Creator Commerce với trọng tâm là hiệu quả triển khai, tính minh bạch và sự đồng hành dài hạn."
       />
 
       <section className="section-wrap">
@@ -337,7 +337,7 @@ export default function App() {
           <article className="rounded-[1.6rem] border border-orange-100 bg-white p-6 shadow-sm md:p-8">
             <h3 className="text-2xl font-extrabold text-sunmind-dark">Sứ mệnh</h3>
             <p className="mt-4 text-base leading-relaxed text-sunmind-gray md:text-lg">
-              Xây dựng môi trường hợp tác minh bạch, chuyên nghiệp; hỗ trợ Creator phát triển nội dung, nâng cao hiệu suất và tạo ra giá trị thực cho thương hiệu.
+              Tạo môi trường hợp tác chuyên nghiệp, minh bạch; giúp Creator phát triển năng lực nội dung và giúp thương hiệu tăng trưởng doanh thu có thể đo lường.
             </p>
           </article>
         </div>
@@ -364,7 +364,7 @@ export default function App() {
     <>
       <PageHeader
         title="Dịch vụ"
-        subtitle="Giải pháp tăng trưởng toàn diện cho Creator và thương hiệu. Mỗi dịch vụ được triển khai theo mục tiêu cụ thể, quy trình rõ ràng và dữ liệu đo lường được."
+        subtitle="Giải pháp tăng trưởng toàn diện cho Creator và thương hiệu, triển khai theo mục tiêu cụ thể, quy trình rõ ràng và hệ đo lường nhất quán."
       />
 
       <section className="section-wrap pt-8">
@@ -382,7 +382,7 @@ export default function App() {
             <article key={item} className="rounded-[1.4rem] border border-orange-100 bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-sunmind-primary">Nhóm dịch vụ</p>
               <h3 className="mt-2 text-xl font-bold text-sunmind-dark">{item}</h3>
-              <p className="mt-2 text-sm text-sunmind-gray">Mô tả ngắn, mục tiêu rõ ràng, theo dõi hiệu suất định kỳ.</p>
+              <p className="mt-2 text-sm text-sunmind-gray">Thiết kế linh hoạt theo ngành hàng, ngân sách và mục tiêu chuyển đổi.</p>
             </article>
           ))}
         </div>
@@ -476,7 +476,7 @@ export default function App() {
     <>
       <PageHeader
         title="Creator Network"
-        subtitle="Kết nối đúng Creator - Tạo giá trị thực. SUNMIND xây dựng mạng lưới Creator dựa trên sự phù hợp giữa nội dung, tệp người xem, ngành hàng và khả năng tạo hiệu quả thương mại."
+        subtitle="Kết nối đúng Creator để tạo giá trị thực: đúng nội dung, đúng tệp người xem và đúng mục tiêu thương mại."
       />
 
       <section className="section-wrap">
@@ -667,6 +667,7 @@ export default function App() {
   const renderCollaborationPage = () => (
     <>
       <PageHeader title="Hợp tác" subtitle="Trong mục Hợp tác gồm: Dành cho Brand, Dành cho Creator, Dành cho nền tảng." />
+      
 
       <section className="section-wrap pt-8">
         <div className="container-main flex flex-wrap gap-3">
