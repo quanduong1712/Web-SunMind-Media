@@ -13,7 +13,7 @@ export default function Process({ steps }) {
         />
 
         <div className="relative mt-12">
-          <div className="absolute left-5 right-5 top-6 hidden h-[2px] bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 md:block" />
+          <div className="absolute left-5 right-5 top-1/2 hidden h-[2px] -translate-y-1/2 bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 md:block" />
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
             {steps.map((step, idx) => (
               <motion.div
