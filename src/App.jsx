@@ -94,8 +94,8 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="mt-10 grid gap-5 lg:grid-cols-[1.25fr_0.95fr]">
-                <article className="rounded-[1.8rem] border border-orange-100 bg-[linear-gradient(135deg,rgba(255,248,238,0.95),rgba(255,255,255,0.96))] p-7 shadow-sm md:p-9">
+              <div className="mt-10 grid gap-5">
+                <article className="rounded-[1.8rem] border border-orange-100 bg-white p-7 shadow-sm md:p-9">
                   <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sunmind-primary">Tầm nhìn</span>
                   <h3 className="mt-4 text-3xl font-extrabold leading-tight md:text-[2.3rem]">
                     Trở thành hệ sinh thái Creator Commerce có năng lực phát triển nhà sáng tạo, sản xuất nội dung và thúc đẩy tăng trưởng kinh doanh trên các nền tảng thương mại điện tử.
@@ -111,7 +111,7 @@ export default function App() {
                 </article>
               </div>
 
-              <div className="mt-10 rounded-[1.8rem] border border-orange-100 bg-[linear-gradient(180deg,rgba(255,252,247,0.9),rgba(255,255,255,0.96))] p-6 md:p-8">
+              <div className="mt-10 rounded-[1.8rem] border border-orange-100 bg-white p-6 shadow-sm md:p-8">
                 <div className="mx-auto max-w-3xl text-center">
                   <span className="eyebrow">GIÁ TRỊ CỐT LÕI</span>
                   <h3 className="mt-5 text-3xl font-extrabold md:text-5xl">
